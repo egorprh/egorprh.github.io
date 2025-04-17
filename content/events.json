@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Название события 1",
+        "author": "Автор 1",
+        "date": "2023-05-15",
+        "image": "/images/event1.jpg",
+        "youtubeUrl": "VIDEO_ID_FROM_YOUTUBE",
+        "description": "Подробное описание события..."
+    },
+    {
+        "id": 2,
+        "title": "Название события 2",
+        "author": "Автор 2",
+        "date": "2023-05-20",
+        "image": "/images/event2.jpg",
+        "youtubeUrl": "ANOTHER_VIDEO_ID",
+        "description": "Еще одно описание..."
+    }
+]
