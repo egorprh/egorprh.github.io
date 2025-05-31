@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dept Exchange</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-dark text-white sticky-top">
+        <nav class="custom-container navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html">
+                <img src="./src/svg/logo-header.svg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav my-5 my-lg-0">
+                    <li class="nav-item me-0 me-lg-3 me-xl-5">
+                        <a class="nav-link" aria-current="page" href="index.html">Главное</a>
+                    </li>
+                    <li class="nav-item me-0 me-lg-3 me-xl-5">
+                        <a class="nav-link" href="#">Наши продукты</a>
+                    </li>
+                    <li class="nav-item me-0 me-lg-3 me-xl-5">
+                        <a class="nav-link" href="#library">Библиотека</a>
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <div class="social-wrap d-lg-none d-flex align-items-center gap-3">
+                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                            <a href="#">
+                                <svg class="">
+                                    <use xlink:href="./styles/sprite.svg#youtube"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                            <a href="#">
+                                <svg class="">
+                                    <use xlink:href="./styles/sprite.svg#instagram"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                            <a href="#">
+                                <svg class="">
+                                    <use xlink:href="./styles/sprite.svg#telegram"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark-light link-phone border-0">
+                        <svg class="phone">
+                            <use xlink:href="./styles/sprite.svg#phone"></use>
+                        </svg>
+                        Свяжитесь со мной
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section section-header">
+            <div class="custom-container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h1 class="title">Dept Exchange</h1>
+                        <p class="desc">Криптовалютный обменник</p>
+                    </div>
+                    <img class="img" src="./src/dept-exchange.png" alt="">    
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="section about-us">
+            <div class="custom-container">
+                <h2 class="section-title">Сервис, который ценит простоту, прозрачность и безопасность.</h2>
+                <p class="section-text">Мы ориентированы на профессиональных участников рынка и тех, кто только начинает работать с криптовалютой, но хочет быть уверен в каждом этапе сделки. Без скрытых условий, без навязанных решений. Только точные расчёты и персональный подход.</p>
+            </div>
+        </section>
+
+        <!-- What We Offer Section -->
+        <section class="section what-we-offer offer">
+            <div class="custom-container">
+                <h2 class="section-title">Что мы предлагаем</h2>
+                <div class="offer__grid">
+
+                    <div class="offer__card card">
+                        <div class="offer__img-1 d-flex align-items-end justify-content-center">
+                            <img src="./src/offer-img-1.png" class="" alt="">
+                        </div>
+                        <div class="card-body bg-light">
+                            <div class="card-title">Прямой обмен</div>
+                            <div class="card-text">Работаем без посредников. Все сделки проходят напрямую с нашей командой.</div>
+                        </div>
+                    </div>
+
+                    <div class="offer__card card">
+                        <div class="card-body bg-light">
+                            <div class="card-title">Фиксацию курса</div>
+                            <div class="card-text">Закрепляем курс на момент оформления заявки. Вы знаете точную сумму заранее.</div>
+                            <div class="offer__img-2  mt-5 bg-white">
+                                <img src="./src/offer-img-2.png" class="" alt="">
+                            </div>
+                        </div>                        
+                    </div>
+
+                    <div class="offer__card card">
+                        <div class="offer__img-3 p-5">
+                            <img src="./src/offer-img-3.png" alt="">
+                        </div>
+                        <div class="card-body bg-light">
+                            <div class="card-title">Быстрое исполнение</div>
+                            <div class="card-text">Среднее время сделки — от 5 до 15 минут. Без задержек и ожиданий.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="section integration">
+            <div class="custom-container">
+                <h2 class="section-title">Интеграция сразу в Telegram</h2>
+                <div class="integration__grid">
+                    <div class="integration__card bg-light">
+                        <div class="card-body d-flex flex-column align-items-start h-100">
+                            <div class="integration__title mb-5 fs-55 fw-600">Обменивай валюту <br> прямо <span>сейчас</span></div>
+                            <div class="integration__text fs-30">Обмен валюты не ради азарта, а потому что деньги - это ответственность.</div>
+                            <button class="btn btn-dark fs-30 mt-auto">Обменять</button>
+                        </div>
+                    </div>
+                    <div class="integration__card ">
+                        <img src="./src/integration-card-2.png" class="img-object-fit" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials mb-5">
+            <div class="custom-container">
+                <h2 class="section-title">Отзывы пользователей:</h2>
+                <div class="position-relative pt-5">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item bg-light p-4 active">
+                                <div class="">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <img src="./src/avatar-1.png" alt="Testimonial Avatar" class="rounded-circle avatar img-object-fit img-fluid">
+                                        <p class="avatar-name m-0">Александр Григорьев</p>
+                                    </div>
+                                    <div class="text">                                        
+                                        <p>Пользуюсь Dept Exchange уже больше месяца. За это время — ни одного сбоя, всегда быстрые переводы, адекватные курсы и нормальная поддержка, которая реально помогает. Удобно, надёжно и без лишней суеты. Приятно иметь дело с сервисом, которому можно доверять!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more testimonials here -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="section footer text-white">
+            <div class="custom-container">
+                <p class="section-title">Ты долистал до конца страницы. <br> Но, может до начала чего-то нового?</p>
+                <p class="section-text opacity-75 mb-5">Оставляйте заявку обратной связи, чтобы познакомиться с менеджером. Узнать стоимость, подобрать программу обучения, помочь с рассрочкой — вы получите ответ на любой запрос. Не верите? Проверьте сами и получите бонус, если поставите нас в ступор.</p>
+                <a href="#" class="btn btn-footer text-white">Свяжитесь со мной</a>
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <ul class="navbar-nav gap-5">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Главное</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#products">Наши продукты</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#library">Библиотека</a>
+                            </li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="d-flex justify-content-between flex-wrap gap-3">
+                    <div class="">
+                        <p class="opacity-75">Мы в социальных сетях:</p>
+                        <div class="social-wrap d-flex align-items-center gap-5">
+                            <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                <a href="#">
+                                    <svg class="">
+                                        <use xlink:href="./styles/sprite.svg#youtube"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                <a href="#">
+                                    <svg class="">
+                                        <use xlink:href="./styles/sprite.svg#instagram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                <a href="#">
+                                    <svg class="">
+                                        <use xlink:href="./styles/sprite.svg#telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-wrap d-flex align-items-center gap-5">
+                        <div class="client-item">
+                            <img src="./src/svg/client-1.svg" alt="">
+                        </div>
+                        <div class="client-item">
+                            <img src="./src/svg/client-2.svg" alt="">
+                        </div>
+                        <div class="client-item">
+                            <img src="./src/svg/client-3.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

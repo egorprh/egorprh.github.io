@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Space - Обучающая платформа</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-dark text-white sticky-top">
+        <nav class="custom-container navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html">
+                <img src="./src/svg/logo-header.svg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav my-5 my-lg-0">
+                    <li class="nav-item me-0 me-lg-3 me-xl-5">
+                        <a class="nav-link" aria-current="page" href="index.html">Главное</a>
+                    </li>
+                    <li class="nav-item me-0 me-lg-3 me-xl-5">
+                        <a class="nav-link" href="#">Наши продукты</a>
+                    </li>
+                    <li class="nav-item me-0 me-lg-3 me-xl-5">
+                        <a class="nav-link" href="#library">Библиотека</a>
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <div class="social-wrap d-lg-none d-flex align-items-center gap-3">
+                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                            <a href="#">
+                                <svg class="">
+                                    <use xlink:href="./styles/sprite.svg#youtube"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                            <a href="#">
+                                <svg class="">
+                                    <use xlink:href="./styles/sprite.svg#instagram"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                            <a href="#">
+                                <svg class="">
+                                    <use xlink:href="./styles/sprite.svg#telegram"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark-light link-phone border-0">
+                        <svg class="phone">
+                            <use xlink:href="./styles/sprite.svg#phone"></use>
+                        </svg>
+                        Свяжитесь со мной
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section section-header">
+            <div class="custom-container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h1 class="title">D-Space</h1>
+                        <p class="desc">Обучающая платформа</p>
+                    </div>
+                    <svg class="">
+                        <use xlink:href="./styles/sprite.svg#DeptSpace"></use>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Features Section -->
+        <section class="section course-features">
+            <div class="custom-container">
+                <div class="features-grid mb-5">
+                    <div class="features-item-1 card-body-mini d-flex flex-column justify-content-between bg-dark-light text-white">
+                        <div class="features-title">38 <br> видеоуроков</div>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="card-text opacity-50">01</div>
+                            <img src="./src/svg/youtube-white.svg" width="70" height="70" alt="">
+                        </div>
+                    </div>                    
+                    <div class="features-item-2 card-body-mini d-flex flex-column justify-content-between bg-light ">
+                        <div class="features-title">Прямые трансляции с <br> менторами</div>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="card-text opacity-50">02</div>
+                            <div class="features-live bg-danger py-2 px-4 rounded-pill text-white"><span class="live-rounded"></span> live</div>
+                        </div>
+                    </div>
+                    <div class="features-item-3 card-body-mini d-flex flex-column justify-content-between bg-light ">
+                        <div class="features-title">3 месяца <br> обучения</div>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="card-text opacity-50">03</div>
+                        </div>
+                    </div>
+                    <div class="features-item-4 card-body-mini d-flex flex-column justify-content-between bg-light">
+                        <div class="features-title">Разбор позиций <br> учеников</div>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="card-text opacity-50">04</div>
+                        </div>
+                    </div>
+                    <div class="features-item-5 card-body-mini d-flex flex-column justify-content-between text-white">
+                        <div class="features-title">Домашние задания <br> к каждому уроку</div>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="card-text opacity-50">05</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="#" class="btn btn-dark">Получить доступ</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Levels of Education Section -->
+        <section class="section levels-of-education">
+            <div class="custom-container">
+                <h2 class="section-title">2 уровня обучения</h2>
+                <div class="education-grid">
+                    <div class="education-card-1 card-body d-flex flex-column justify-content-between">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="education-1-circle"></div>
+                                <div class="education-card-title">Middle</div>
+                            </div>
+                            <div class="card-text d-flex gap-3 align-items-center mt-2">
+                                <img src="./src/svg/discount.svg" alt="">
+                                <div><span style="font-size: 30px;">540$</span> за 1 месяц</div>
+                            </div>
+                        </div>
+                        <div class="education-text">
+                            Продвинутый базовый уровень. <br>
+                            Помогает выстроить личную торговую систему на основе <br>
+                            устойчивых моделей, аналитики и контроля рисков.
+                        </div>
+                    </div>
+
+                    <div class="education-card-2 card-body d-flex flex-column justify-content-between">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="education-2-circle"></div>
+                                <div class="education-card-title">Middle</div>
+                            </div>
+                            <div class="card-text d-flex gap-3 align-items-center mt-2">
+                                <img src="./src/svg/discount.svg" alt="">
+                                <div>По запросу</div>
+                            </div>
+                        </div>
+                        <div class="education-text">
+                            Профессиональный уровень. <br>
+                            Фокус на индивидуализации стратегии, гибком мышлении и  <br>
+                            глубоком понимании рынка. Для опытных трейдеров, готовых  <br>
+                            выйти на новый уровень.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Format of Learning Section -->
+        <section class="section format-of-learning">
+            <div class="custom-container">
+                <h2 class="section-title">Формат обучения</h2>
+                <div class="learning-grid">
+                    <div class="learning-card card-body bg-light d-flex flex-column justify-content-between">
+                        <div class="img-wrap bg-white d-flex align-items-center justify-content-center">
+                            <img src="./src/book.png" alt="">
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="learning-title">Домашние задания</div>
+                            <div class="card-text text-muted">01</div>
+                        </div>
+                    </div>
+
+                    <div class="learning-card card-body bg-light d-flex flex-column justify-content-between">
+                        <div class="img-wrap bg-white d-flex align-items-center justify-content-center">
+                            <div class="learning-say card-text"><span class="text-grey-light">say</span> “Hello world”</div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="learning-title">Прямая работа с ментором</div>
+                            <div class="card-text text-muted">02</div>
+                        </div>
+                    </div>
+
+                    <div class="learning-card card-body bg-light d-flex flex-column justify-content-between">
+                        <div class="img-wrap bg-white d-flex align-items-center justify-content-center">
+                            <img src="./src/video-lessons.png" alt="">
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="learning-title">Видеоуроки</div>
+                            <div class="card-text text-muted">03</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Duration Section -->
+        <section class="section duration">
+            <div class="custom-container">
+                <h2 class="section-title">Продолжительность:</h2>
+                <div class="d-flex align-items-center gap-4">
+                    <div class="">
+                        <img src="./src/svg/calendar.svg" width="95" height="95" alt="Calendar" class="img-fluid">
+                    </div>
+                    <div class="">
+                        <div class="card-title">3 месяца (работа с ментором и комьюнити)</div>
+                        <div class="card-text text-grey-light">+3 месяца бесплатно на создание торговой стратегии</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Goals Section -->
+        <section class="section contact-area scourse-goals">
+            <div class="custom-container">
+                <h2 class="section-title mb-4">
+                    За это время мы доведём тебя, до уровня 
+                    <span class="underline-blue">прибыльного трейдера</span>.
+                </h2>
+                <p class="section-text mb-4">Мы собрали курс для тех, кто хочет действовать.</p>
+                <form class="contact-area-wrap card-body ">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="">
+                            <p class="card-title text-white mb-4">Введите свои данные</p>
+                            <form class="contact-form">
+                                <input type="text" class="form-control text-white" placeholder="Ф.И.О">
+                                <input type="tel" class="form-control text-white mt-3" placeholder="Ваш номер телефона">
+                                <input type="text" class="form-control text-white mt-3" placeholder="Telegram">
+                                <div class="form-check d-flex align-items-center gap-2 mt-3">
+                                    <input class="form-check-input mt-0" type="checkbox" id="consentCheckbox">
+                                    <label class="form-check-label text-white" for="consentCheckbox">
+                                        Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности.
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-3">
+                                    Оставить заявку
+                                    <img class="ms-2" src="./src/svg/arrow-right-white.svg" alt="arrow" width="18" height="18">
+                                </button>
+                            </form>
+                        </div>
+                        <div class="contact-area-start">
+                            <img src="./src/svg/start-contact-form.svg" alt="App Logo" class="img-fluid">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Target Audience Section -->
+        <section class="section target-audience">
+            <div class="custom-container">
+                <h2 class="section-title">Для кого данный курс:</h2>
+                <div class="target-audience-grid">
+                    <div class="audience-card-1 bg-light card-body d-flex flex-column">
+                        <div class="img-wrap bg-white d-flex align-items-center justify-content-center">
+                            <img src="./src/audience-card-1.png" alt="">
+                        </div>
+                        <div class="card-title mt-auto mb-2">Для тех, кто только начинает.</div>
+                        <div class="card-text">Освоишь фундаментальные принципы, поймёшь, 
+                            как устроен рынок, и начнёшь торговать по 
+                            системе — без хаоса и слива.</div>
+                    </div>
+                    
+                    <div class="audience-card-2 bg-pink card-body d-flex flex-column">
+                        <div class="img-wrap bg-white d-flex align-items-center justify-content-center">
+                            <div class="d-flex flex-column w-75">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="audience-card-2-text">Эмоции</div>
+                                    <img src="./src/svg/close.svg" alt="">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="audience-card-2-text">Дисциплина</div>
+                                    <img src="./src/svg/close.svg" alt="">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="audience-card-2-text">Контроль</div>
+                                    <img src="./src/svg/close.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-title mt-auto mb-2">Опытных трейдеров</div>
+                        <div class="card-text">Если уже пробовал, но не добился стабильности. Переосмыслишь подход, соберёшь свою стратегию и начнёшь  действовать чётко, без скачков и эмоций.</div>
+                    </div>
+                    
+                    <div class="audience-card-3 bg-yellow-light card-body d-flex flex-column">
+                        <div class="img-wrap bg-white d-flex align-items-center justify-content-center">
+                            <img src="./src/audience-card-2.png" alt="">
+                        </div>
+                        <div class="card-title mt-auto mb-2">Продвинутых трейдеров</div>
+                        <div class="card-text">Если зарабатываешь, но хочешь большего. Углубишь понимание, улучшишь риск-менеджмент и выведешь трейдинг на следующий уровень.</div>
+                    </div>
+                    
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-dark">Получить доступ</a>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Course Program Section -->
+        <section class="section course-program">
+            <div class="custom-container">
+                <h2 class="section-title">Программа курса</h2>
+                <div class="d-flex flex-column gap-5">
+                    <div class="course-program-card card d-flex flex-row">
+                        <div class="course-program-card-content bg-dark text-white card-body d-flex flex-column align-items-start w-50">
+                            <div class="badge bg-white text-black">Блок 1</div>
+                            <div class="course-program-card-title mt-auto">Введение в крипто-трейдинг</div>
+                            <div class="course-program-card-desc">Изучишь основы криптоторговли, ключевые особенности торговли и поведение цены. Поймёшь, как устроены биржи, стакан, ликвидность и начнёшь уверенно ориентироваться в волатильной среде.</div>
+                        </div>
+                        <div class="course-program-card-img  w-50">
+                            <img src="./src/chart-analysis.png" alt="Chart Analysis" class="img-object-fit img-fluid">
+                        </div>
+                    </div>
+                    
+                    <div class="course-program-card card d-flex flex-row">
+                        <div class="course-program-card-content bg-dark text-white card-body d-flex flex-column align-items-start w-50">
+                            <div class="badge bg-white text-black">Блок 2</div>
+                            <div class="course-program-card-title mt-auto">Технический анализ</div>
+                            <div class="course-program-card-desc">Освой базовые и продвинутые элементы теханализа: уровни, тренды, паттерны, свечи и объёмы. Научишься читать график, находить точки входа и принимать решения без догадок.</div>
+                        </div>
+                        <div class="course-program-card-img  w-50">
+                            <img src="./src/technical-analysis.png" alt="Chart Analysis" class="img-object-fit img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="course-program-card card d-flex flex-row">
+                        <div class="course-program-card-content bg-dark text-white card-body d-flex flex-column align-items-start w-50">
+                            <div class="badge bg-white text-black">Блок 3</div>
+                            <div class="course-program-card-title mt-auto">Макроэкономический анализ</div>
+                            <div class="course-program-card-desc">Разберёшься, как глобальные экономические процессы влияют на рынки. Изучишь ключевые показатели, события и взаимосвязи, чтобы понимать, почему цена движется, а не только куда.</div>
+                        </div>
+                        <div class="course-program-card-img  w-50">
+                            <img src="./src/macroeconomic-analysis.png" alt="Chart Analysis" class="img-object-fit img-fluid">
+                        </div>
+                    </div>
+                    
+                    <div class="course-program-card card d-flex flex-row">
+                        <div class="course-program-card-content bg-dark text-white card-body d-flex flex-column align-items-start w-50">
+                            <div class="badge bg-white text-black">Блок 4</div>
+                            <div class="course-program-card-title mt-auto">Стратегия торговли</div>
+                            <div class="course-program-card-desc">Построишь чёткую торговую систему под свой стиль. Научишься комбинировать анализ, риск-менеджмент и точки входа в единую стратегию, которую можно масштабировать и повторять.</div>
+                        </div>
+                        <div class="course-program-card-img  w-50">
+                            <img src="./src/trading-strategy.png" alt="Chart Analysis" class="img-object-fit img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="course-program-card card d-flex flex-row">
+                        <div class="course-program-card-content bg-dark text-white card-body d-flex flex-column align-items-start w-50">
+                            <div class="badge bg-white text-black">Блок 5</div>
+                            <div class="course-program-card-title mt-auto">Психология</div>
+                            <div class="course-program-card-desc">Поймёшь, как эмоции влияют на решения и результаты. Научишься контролировать страх, жадность и импульсивность, чтобы торговать хладнокровно и стабильно.</div>
+                        </div>
+                        <div class="course-program-card-img  w-50">
+                            <img src="./src/psychology.png" alt="Chart Analysis" class="img-object-fit img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="course-program-card card">
+                        <div class="bg-dark text-white card-body d-flex flex-column gap-4">
+                            <div class="card-questions-wrap">
+                                <img src="./src/questions.png" alt="Chart Analysis" class="course-program-card img-object-fit img-fluid">
+                            </div>
+                            <h2 class="course-program-card-questions-title">Бонусный блок</h2>
+                        </div>                        
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials">
+            <div class="custom-container">
+                <h2 class="section-title">Что говорят те, кто с нами</h2>
+                <div class="position-relative pt-5 mb-5">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item bg-light p-4 active">
+                                <div class="">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <img src="./src/avatar-1.png" alt="Testimonial Avatar" class="rounded-circle avatar img-object-fit img-fluid">
+                                        <p class="avatar-name m-0">Андрей Третьяков</p>
+                                    </div>
+                                    <div class="text">                                        
+                                        <p>Я пришёл сюда вообще за зонами. Думал, ну, прикольно — "софтик", зоны покупок, что-то постят, можно попробовать. А в итоге залип. Здесь по-другому устроено всё. Никто не орёт «вход по рынку», никто не втирает, что через месяц ты будешь на ламбе. Вместо этого — живая среда, где люди реально работают с головой, обсуждают, ошибаются, разбирают, растут.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more testimonials here -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary text-al">Присоединиться</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="section footer text-white">
+            <div class="custom-container">
+                <p class="section-title">Ты долистал до конца страницы. <br> Но, может до начала чего-то нового?</p>
+                <p class="section-text opacity-75 mb-5">Оставляйте заявку обратной связи, чтобы познакомиться с менеджером. Узнать стоимость, подобрать программу обучения, помочь с рассрочкой — вы получите ответ на любой запрос. Не верите? Проверьте сами и получите бонус, если поставите нас в ступор.</p>
+                <a href="#" class="btn btn-footer text-white">Свяжитесь со мной</a>
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <ul class="navbar-nav gap-5">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Главное</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#products">Наши продукты</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#library">Библиотека</a>
+                            </li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="d-flex justify-content-between flex-wrap gap-3">
+                    <div class="">
+                        <p class="opacity-75">Мы в социальных сетях:</p>
+                        <div class="social-wrap d-flex align-items-center gap-5">
+                            <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                <a href="#">
+                                    <svg class="">
+                                        <use xlink:href="./styles/sprite.svg#youtube"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                <a href="#">
+                                    <svg class="">
+                                        <use xlink:href="./styles/sprite.svg#instagram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                <a href="#">
+                                    <svg class="">
+                                        <use xlink:href="./styles/sprite.svg#telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client-wrap d-flex align-items-center gap-5">
+                        <div class="client-item">
+                            <img src="./src/svg/client-1.svg" alt="">
+                        </div>
+                        <div class="client-item">
+                            <img src="./src/svg/client-2.svg" alt="">
+                        </div>
+                        <div class="client-item">
+                            <img src="./src/svg/client-3.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
