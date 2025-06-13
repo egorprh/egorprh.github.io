@@ -54,7 +54,7 @@
                             </a>
                         </div>
                     </div>
-                    <button class="btn btn-dark-light link-phone border-0 open-modal">
+                    <button class="btn btn-dark-light link-phone border-0 open-modal" data-form-source="index__header">
                         <svg class="phone">
                             <use xlink:href="./styles/sprite.svg#phone"></use>
                         </svg>
@@ -78,7 +78,7 @@
                         <h1 class="title text-white">Не угадывай, а выстраивай свою систему заработка на рынке.</h1>
                         <p class="desc text-white">Здесь не про быстро. Здесь про навсегда. Мы не учим ловить момент — мы учим выстраивать путь.</p>
                         <div class="d-flex align-items-center justify-content-center">
-                            <a href="#" class="btn btn-enrolment d-flex align-items-center open-modal">
+                            <button href="#" class="btn btn-enrolment d-flex align-items-center open-modal" data-form-source="index__main-block">
                                 <div class="d-none d-md-inline-block">
                                     <span class="avatar-btn"><img src="./src/avatar-1.png" alt="Avatar" class="img-object-fit rounded-circle"></span>
                                     <span class="avatar-btn"><img src="./src/avatar-2.png" alt="Avatar" class="img-object-fit rounded-circle"></span>
@@ -87,7 +87,7 @@
                                 <svg class="chevron-right">
                                     <use xlink:href="./styles/sprite.svg#chevron-right"></use>
                                 </svg>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -175,14 +175,14 @@
                         <div class="card-details bg-light d-flex flex-column justify-content-between">
                             <p class="description">Мир криптовалют — это не тренд и не казино. Это новая среда, где ценится не скорость, а точность. Не шум, а система. Если вы только начинаете и чувствуете, что вокруг слишком много информации, противоречий и «экспертов», — этот курс поможет вам встать на твёрдую основу.</p>
                             <div class="d-flex align-items-center justify-content-between flex-row-reverse flex-sm-row">
-                                <a href="#" class="action-link d-flex align-items-center">
+                                <button href="#" class="action-link d-flex align-items-center border-0 bg-transparent open-modal" data-form-source="index__card-start">
                                     <div class="icon-wrap-dark me-sm-3 me-1">
                                         <svg class="">
                                             <use xlink:href="./styles/sprite.svg#create"></use>
                                         </svg>
                                     </div>
                                     <p class="card-text text-black m-0 d-none d-sm-block">Записаться</p>
-                                </a>
+                                </button>
                                 <a href="start.html" class="icon-wrap-dark more">
                                     Подробнее
                                     <svg class="d-none d-sm-block">
@@ -213,14 +213,14 @@
                         <div class="card-details bg-light d-flex flex-column justify-content-between">
                             <p class="description card-text">Стартовая точка для тех, кто хочет системно подойти к трейдингу. Вы разберётесь, как устроены финансовые рынки, научитесь использовать ключевые инструменты и принимать решения. Поможем выстроить рабочий процесс: от выбора стратегии — до первых сделок.</p>
                             <div class="d-flex align-items-center justify-content-between flex-row-reverse flex-sm-row">
-                                <a href="#" class="action-link d-flex align-items-center cursor-pointer">
+                                <button class="action-link d-flex align-items-center border-0 bg-transparent open-modal" data-form-source="index__card-d-space">
                                     <div class="icon-wrap-dark me-sm-3 me-1">
                                         <svg class="">
                                             <use xlink:href="./styles/sprite.svg#create"></use>
                                         </svg>
                                     </div>
                                     <p class="card-text text-black m-0 d-none d-sm-block">Записаться</p>
-                                </a>
+                                </button>
                                 <a href="d-space.html" class="icon-wrap-dark more">
                                     Подробнее
                                     <svg class="d-none d-sm-block">
@@ -252,14 +252,14 @@
                             <p class="description card-text text-white">Торговая группа внутри dept. Здесь собираются те, кто работает с рынком каждый день. Мы обмениваемся идеями, обсуждаем сетапы, делимся точками входа и разбираем сделки. <br>
                                 Без шума и случайных людей — только практикующие трейдеры.</p>
                             <div class="d-flex align-items-center justify-content-between flex-row-reverse flex-sm-row">
-                                <a href="#" class="action-link d-flex align-items-center cursor-pointer">
+                                <button class="action-link d-flex align-items-center border-0 bg-transparent open-modal" data-form-source="index__card-d-closed">
                                     <div class="icon-wrap-light me-sm-3 me-1">
                                         <svg class="icon">
                                             <use xlink:href="./styles/sprite.svg#create"></use>
                                         </svg>
                                     </div>
                                     <p class="card-text text-white m-0 d-none d-sm-block">Записаться</p>
-                                </a>
+                                </button>
                                 <a href="d-closed.html" class="icon-wrap-light more">
                                     Подробнее
                                     <svg class="d-none d-sm-block">
@@ -368,16 +368,26 @@
                         <div class="">
                             <p class="title text-white">Введите свои данные</p>
                             <form class="contact-form">
-                                <input type="text" class="form-control text-white" placeholder="Ф.И.О">
-                                <input type="tel" class="form-control text-white mt-3" placeholder="Ваш номер телефона">
-                                <input type="text" class="form-control text-white mt-3" placeholder="Telegram">
+                                <div class="input-wrapper position-relative">
+                                    <p class="error-message d-none">Фамилия и имя должны содержать не бенее 2-х букв</p>
+                                    <input type="text" class="form-control text-white" name="name" placeholder="Ф.И.О" autocomplete="name" required>                                    
+                                </div>                                
+                                <div class="input-wrapper position-relative">
+                                    <p class="error-message d-none">Телефон начинается с "+" и имеет не менее 10 цифр</p>
+                                    <input type="tel" class="form-control text-white mt-3" name="phone" placeholder="Ваш номер телефона" autocomplete="tel" required>
+                                </div>
+                                <div class="input-wrapper position-relative">
+                                    <p class="error-message d-none">Поле не может содержать русские буквы</p>
+                                    <input type="text" class="form-control text-white mt-3" name="telegram" placeholder="Telegram" required>
+                                </div>
+                                <input type="hidden" name="form_source" value="index__form">
                                 <div class="form-check d-flex align-items-start gap-2 mt-4">
                                     <input class="form-check-input flex-shrink-0 " type="checkbox" id="consentCheckbox">
                                     <label class="form-check-label text-white" for="consentCheckbox">
                                         Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности.
                                     </label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick="validateForm(this)">
                                     Оставить заявку
                                     <svg class="chevron-right">
                                         <use xlink:href="./styles/sprite.svg#chevron-right"></use>
@@ -398,7 +408,7 @@
             <div class="custom-container">
                 <p class="section-title">Ты долистал до конца страницы. <br> Но, может до начала чего-то нового?</p>
                 <p class="section-text opacity-75 mb-5">Оставляйте заявку обратной связи, чтобы познакомиться с менеджером. Узнать стоимость, подобрать программу обучения, помочь с рассрочкой — вы получите ответ на любой запрос. Не верите? Проверьте сами и получите бонус, если поставите нас в ступор.</p>
-                <button class="btn btn-dark-light text-white mb-5 open-modal">Свяжитесь со мной</button>
+                <button class="btn btn-dark-light text-white mb-5 open-modal" data-form-source="index__footer">Свяжитесь со мной</button>
                 <nav class="footer-nav mb-5">                    
                     <ul class="d-flex flex-column flex-sm-row gap-3 gap-sm-5 p-0">
                         <li class="nav-item">

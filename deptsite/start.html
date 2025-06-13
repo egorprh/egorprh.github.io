@@ -54,7 +54,7 @@
                             </a>
                         </div>
                     </div>
-                    <button class="btn btn-dark-light link-phone border-0 open-modal">
+                    <button class="btn btn-dark-light link-phone border-0 open-modal" data-form-source="start__header">
                         <svg class="phone">
                             <use xlink:href="./styles/sprite.svg#phone"></use>
                         </svg>
@@ -86,7 +86,7 @@
                                 </div>
                                 <p class="category text-grey-light">На базе обучающей платформы</p>
                                 <p class="description">Ты узнаешь, что такое криптовалюта, как она работает и с чего начать торговлю. Короткие видео, простые объяснения и тесты после каждого урока.</p>
-                                <button class="btn btn-dark mt-auto open-modal">Бесплатный доступ</button>
+                                <button class="btn btn-dark mt-auto open-modal" data-form-source="start__main-card">Бесплатный доступ</button>
                                 <img src="./src/product-card-1.png" alt="Course Preview" class="details-img">
                             </div>
                         </div>
@@ -230,16 +230,26 @@
                         <div class="">
                             <p class="title text-white">Введите свои данные</p>
                             <form class="contact-form">
-                                <input type="text" class="form-control text-white" placeholder="Ф.И.О">
-                                <input type="tel" class="form-control text-white mt-3" placeholder="Ваш номер телефона">
-                                <input type="text" class="form-control text-white mt-3" placeholder="Telegram">
+                                <div class="input-wrapper position-relative">
+                                    <p class="error-message d-none">Фамилия и имя должны содержать не бенее 2-х букв</p>
+                                    <input type="text" class="form-control text-white" name="name" placeholder="Ф.И.О" autocomplete="name" required>                                    
+                                </div>                                
+                                <div class="input-wrapper position-relative">
+                                    <p class="error-message d-none">Телефон начинается с "+" и имеет не менее 10 цифр</p>
+                                    <input type="tel" class="form-control text-white mt-3" name="phone" placeholder="Ваш номер телефона" autocomplete="tel" required>
+                                </div>
+                                <div class="input-wrapper position-relative">
+                                    <p class="error-message d-none">Поле не может содержать русские буквы</p>
+                                    <input type="text" class="form-control text-white mt-3" name="telegram" placeholder="Telegram" required>
+                                </div>
+                                <input type="hidden" name="form_source" value="start__form">
                                 <div class="form-check d-flex align-items-start gap-2 mt-4">
                                     <input class="form-check-input flex-shrink-0 " type="checkbox" id="consentCheckbox">
                                     <label class="form-check-label text-white" for="consentCheckbox">
                                         Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности.
                                     </label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick="validateForm(this)">
                                     Оставить заявку
                                     <svg class="chevron-right">
                                         <use xlink:href="./styles/sprite.svg#chevron-right"></use>
@@ -261,7 +271,7 @@
             <div class="custom-container">
                 <p class="section-title">Ты долистал до конца страницы. <br> Но, может до начала чего-то нового?</p>
                 <p class="section-text opacity-75 mb-5">Оставляйте заявку обратной связи, чтобы познакомиться с менеджером. Узнать стоимость, подобрать программу обучения, помочь с рассрочкой — вы получите ответ на любой запрос. Не верите? Проверьте сами и получите бонус, если поставите нас в ступор.</p>
-                <button class="btn btn-dark-light text-white mb-5 open-modal">Свяжитесь со мной</button>
+                <button class="btn btn-dark-light text-white mb-5 open-modal" data-form-source="start__footer">Свяжитесь со мной</button>
                 <nav class="footer-nav mb-5">                    
                     <ul class="d-flex flex-column flex-sm-row gap-3 gap-sm-5 p-0">
                         <li class="nav-item">

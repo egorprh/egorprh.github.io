@@ -7,11 +7,27 @@
         <h2>Введите свои данные</h2>
         <p>Это позволит нам связаться с вами для передачи дополнительной информации и оказания поддержки.</p>
         <!-- Форма внутри попапа -->
-        <form class="contact-form">
-            <input class="form-control mb-2" type="text" name="name" placeholder="Ф.И.О" required>
-            <input class="form-control mb-2" type="tel" name="phone" placeholder="Ваш номер телефона" required>
-            <input class="form-control mb-4" type="text" name="telegram" placeholder="Telegram" required>
-            <button type="submit" class="btn btn-primary submit-button">Записаться</button>
+        <form class="contact-form popup">
+            <div class="input-wrapper position-relative">
+                <p class="error-message d-none">Фамилия и имя должны содержать не бенее 2-х букв</p>
+                <input class="form-control mb-2" type="text" name="name" placeholder="Ф.И.О" autocomplete="name" required>
+            </div>
+            <div class="input-wrapper position-relative">
+                <p class="error-message d-none">Телефон начинается с "+" и имеет не менее 10 цифр</p>
+                <input class="form-control mb-2" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="tel" required>
+            </div>
+            <div class="input-wrapper position-relative">
+                <p class="error-message d-none">Поле не может содержать русские буквы</p>
+                <input class="form-control mb-4" type="text" name="telegram" placeholder="Telegram" required>
+            </div>
+            <input type="hidden" name="form_source">
+            <div class="form-check d-flex align-items-start gap-2 mt-4">
+                <input class="form-check-input flex-shrink-0 " type="checkbox" id="consentCheckbox">
+                <label class="form-check-label" for="consentCheckbox">
+                    Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности.
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary submit-button" onclick="validateForm(this)">Записаться</button>
         </form>
         <svg class="close-modal">
             <use xlink:href="./styles/sprite.svg#close"></use>
