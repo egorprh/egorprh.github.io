@@ -54,7 +54,7 @@
                             </a>
                         </div>
                     </div>
-                    <button class="btn btn-dark-light link-phone border-0">
+                    <button class="btn btn-dark-light link-phone border-0 open-modal">
                         <svg class="phone">
                             <use xlink:href="./styles/sprite.svg#phone"></use>
                         </svg>
@@ -119,7 +119,7 @@
                 </div>
                 
                 <div class="text-center">
-                    <a href="#" class="btn btn-dark">Приобрести подписку</a>
+                    <button class="btn btn-dark open-modal">Приобрести подписку</button>
                 </div>
             </div>
         </section>
@@ -129,14 +129,14 @@
             <div class="custom-container">
                 <h2 class="section-title">Торговые журналы группы</h2>
                 <div class="statistics-card bg-dark text-white p-3 p-md-5">
-                    <div class="title mb-5 d-flex gap-2 flex-column flex-lg-row align-items-lg-end"><span>Статистика группы </span> <span class="tagline pb-1">Начиная с 2025 года</span></div>
+                    <div class="title mb-sm-5 mb-3 d-flex gap-2 flex-column flex-lg-row align-items-lg-end"><span>Статистика группы </span> <span class="tagline pb-1 d-none d-sm-block">Начиная с 2025 года</span></div>
                     <p class="text opacity-50 mb-5">Все сделки фиксируются и публикуются в открытых торговых журналах. Ты видишь реальную статистику, логику входов и процесс принятия решений — без фильтров и прикрас.</p>
                     <p class="text opacity-50 mb-5">Можешь просмотреть сам: <span class="tagline"> (просто нажми на месяц)</span></p>
-                    <div class="d-flex flex-wrap gap-2">
-                        <button class="btn text-white">Январь</button>
-                        <button class="btn text-white">Февраль</button>
-                        <button class="btn text-white">Март</button>
-                        <button class="btn text-white">Апрель</button>
+                    <div class="btn-grid">
+                        <a href="https://voltaic-heliotrope-818.notion.site/160e3b5c6361809dab20e647cef19701?v=160e3b5c636181d6b04a000c4ed9f945" target="_blank" class="btn text-white">Январь</a>
+                        <a href="https://voltaic-heliotrope-818.notion.site/19be3b5c63618009b157d758e1d9d5a6?v=19be3b5c6361815c8cbf000c5a8c0a53" target="_blank" class="btn text-white">Февраль</a>
+                        <a href="https://voltaic-heliotrope-818.notion.site/1aee3b5c636180e894b9d99267c1f3f9?v=1aee3b5c636181838606000c95fc54b9" target="_blank" class="btn text-white">Март</a>
+                        <a href="https://mesquite-hound-fb0.notion.site/1606394c69bf8058a16ace9d3c306e66?v=4281968cdcc6439ca697ea6683cd4ee4" target="_blank" class="btn text-white">Апрель</a>
                     </div>
                 </div>                
             </div>
@@ -176,7 +176,7 @@
         <!-- Registration Form Section -->
         <section class="section registration-form contact-area">
             <div class="custom-container">
-                <form class="contact-area-wrap">
+                <div class="contact-area-wrap">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
                             <p class="title text-white">Введите свои данные</p>
@@ -199,12 +199,10 @@
                             </form>
                         </div>
                         <div class="contact-area-logo-wrap">
-                            <svg class="img">
-                                <use xlink:href="./styles/sprite.svg#DClosedWhite"></use>
-                            </svg> 
+                            <img src="./src/logo_animate.gif" alt="App Logo" class="img-fluid">
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </section>
     </div>
@@ -275,39 +273,27 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section -->        
         <section class="section testimonials">
             <div class="custom-container">
                 <h2 class="section-title">Что говорят участники:</h2>
-                <div class="position-relative pt-5">
-                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="position-relative pt-sm-5 pb-5 pb-sm-0">
+                    <div id="carouseClosed" class="carousel slide" data-bs-ride="carousel" data-type="dataClosed">
+
                         <div class="carousel-inner">
-                            <div class="carousel-item bg-light p-4 active">
-                                <div class="">
-                                    <div class="d-flex align-items-center gap-3 mb-3">
-                                        <img src="./src/avatar-1.png" alt="Testimonial Avatar" class="rounded-circle avatar img-object-fit img-fluid">
-                                        <p class="avatar-name m-0">Андрей Третьяков</p>
-                                    </div>
-                                    <div class="text">                                        
-                                        <p>Я пришёл сюда вообще за зонами. Думал, ну, прикольно — "софтик", зоны покупок, что-то постят, можно попробовать. А в итоге залип. Здесь по-другому устроено всё. Никто не орёт «вход по рынку», никто не втирает, что через месяц ты будешь на ламбе. Вместо этого — живая среда, где люди реально работают с головой, обсуждают, ошибаются, разбирают, растут.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Add more testimonials here -->
+                            <!-- слайды -->
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouseClosed" data-bs-slide="prev">
                             <svg class="arrow-left"  aria-hidden="true">
                                 <use xlink:href="./styles/sprite.svg#arrow-left"></use>
                             </svg>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouseClosed" data-bs-slide="next">
                             <svg class="arrow-right"  aria-hidden="true">
                                 <use xlink:href="./styles/sprite.svg#arrow-right"></use>
                             </svg>
                         </button>
-                        <div class="text-center mt-3 mt-sm-5">
-                            <button class="btn bg-dark text-white">Присоединиться</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -318,42 +304,40 @@
             <div class="custom-container">
                 <p class="section-title">Ты долистал до конца страницы. <br> Но, может до начала чего-то нового?</p>
                 <p class="section-text opacity-75 mb-5">Оставляйте заявку обратной связи, чтобы познакомиться с менеджером. Узнать стоимость, подобрать программу обучения, помочь с рассрочкой — вы получите ответ на любой запрос. Не верите? Проверьте сами и получите бонус, если поставите нас в ступор.</p>
-                <a href="#" class="btn btn-dark-light text-white">Свяжитесь со мной</a>
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <ul class="navbar-nav gap-5">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Главное</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html#products">Наши продукты</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="404.html">Библиотека</a>
-                            </li>
-                        </ul>
-                    </div>
+                <button class="btn btn-dark-light text-white mb-5 open-modal">Свяжитесь со мной</button>
+                <nav class="footer-nav mb-5">                    
+                    <ul class="d-flex flex-column flex-sm-row gap-3 gap-sm-5 p-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Главное</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">Наши продукты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="404.html">Библиотека</a>
+                        </li>
+                    </ul>                    
                 </nav>
                 <div class="d-flex justify-content-between flex-wrap gap-5">
                     <div class="">
                         <p class="opacity-75">Мы в социальных сетях:</p>
                         <div class="social-wrap d-flex align-items-center gap-5">
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="#">
+                                <a href="https://www.youtube.com/@dept.trading" target="_blank">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#youtube"></use>
                                     </svg>
                                 </a>
                             </div>
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="#">
+                                <a href="https://www.instagram.com/dept.crypto/" target="_blank">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#instagram"></use>
                                     </svg>
                                 </a>
                             </div>
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="#">
+                                <a href="https://t.me/+XPiBVkR7ns0yOGEy" target="_blank">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#telegram"></use>
                                     </svg>
@@ -379,5 +363,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

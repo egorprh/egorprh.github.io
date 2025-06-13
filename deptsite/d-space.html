@@ -54,7 +54,7 @@
                             </a>
                         </div>
                     </div>
-                    <button class="btn btn-dark-light link-phone border-0">
+                    <button class="btn btn-dark-light link-phone border-0 open-modal">
                         <svg class="phone">
                             <use xlink:href="./styles/sprite.svg#phone"></use>
                         </svg>
@@ -122,7 +122,7 @@
                 </div>
                 
                 <div class="text-center">
-                    <a href="#" class="btn btn-dark">Получить доступ</a>
+                    <button class="btn btn-dark open-modal">Получить доступ</button>
                 </div>
             </div>
         </section>
@@ -133,14 +133,19 @@
                 <h2 class="section-title">2 уровня обучения</h2>
                 <div class="education-grid">
                     <div class="card-1 card-body d-flex flex-column gap-3">
-                        <div class="d-flex flex-column-reverse flex-sm-row gap-2 align-items-start justify-content-between">
+                        <div class="d-flex flex-column-reverse flex-sm-row gap-sm-2 gap-5 align-items-start justify-content-between">
                             <div class="d-flex gap-3 align-items-center">
                                 <div class="circle-1"></div>
                                 <div class="title">Middle</div>
                             </div>
                             <div class="card-text d-flex gap-2 align-items-center align-self-end mt-2">
-                                <img src="./src/svg/discount.svg" alt="">
-                                <div><span style="font-size: 30px;">540$</span> за 1 месяц</div>
+                                <svg class="price">
+                                    <use xlink:href="./styles/sprite.svg#price"></use>
+                                </svg>
+                                <div class="d-flex flex-column flex-sm-row align-items-sm-end">
+                                    <span style="font-size: 30px;">540$</span> 
+                                    <span>/за 1 месяц</span>
+                                </div>
                             </div>
                         </div>
                         <div class="text">
@@ -151,13 +156,15 @@
                     </div>
 
                     <div class="card-2 card-body d-flex flex-column gap-3">
-                        <div class="d-flex flex-column-reverse flex-sm-row gap-2 align-items-start justify-content-between">
+                        <div class="d-flex flex-column-reverse flex-sm-row gap-sm-2 gap-5 align-items-start justify-content-between">
                             <div class="d-flex gap-3 align-items-center">
                                 <div class="circle-2"></div>
                                 <div class="title">Middle</div>
                             </div>
                             <div class="card-text d-flex gap-2 align-items-center align-self-end mt-2">
-                                <img src="./src/svg/discount.svg" alt="">
+                                <svg class="price">
+                                    <use xlink:href="./styles/sprite.svg#price"></use>
+                                </svg>
                                 <div>По запросу</div>
                             </div>
                         </div>
@@ -234,7 +241,7 @@
                     <span class="underline-blue">прибыльного трейдера</span>.
                 </h2>
                 <p class="section-text mb-4">Мы собрали курс для тех, кто хочет действовать.</p>
-                <form class="contact-area-wrap">
+                <div class="contact-area-wrap">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="">
                             <p class="title text-white">Введите свои данные</p>
@@ -257,12 +264,10 @@
                             </form>
                         </div>
                         <div class="contact-area-logo-wrap">
-                            <svg class="img dep-space">
-                                <use xlink:href="./styles/sprite.svg#DeptSpace"></use>
-                            </svg>
+                            <img src="./src/logo_animate.gif" alt="App Logo" class="img-fluid">
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </section>
 
@@ -326,7 +331,7 @@
                 </div>
 
                 <div class="text-center mt-5">
-                    <a href="#" class="btn btn-dark">Получить доступ</a>
+                    <button class="btn btn-dark open-modal">Получить доступ</button>
                 </div>
             </div>
             
@@ -405,39 +410,27 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section -->        
         <section class="section testimonials">
             <div class="custom-container">
                 <h2 class="section-title">Что говорят ученики:</h2>
-                <div class="position-relative pt-5">
-                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="position-relative pt-sm-5 pb-5 pb-sm-0">
+                    <div id="carouseSpace" class="carousel slide" data-bs-ride="carousel" data-type="dataSpace">
+
                         <div class="carousel-inner">
-                            <div class="carousel-item bg-light p-4 active">
-                                <div class="">
-                                    <div class="d-flex align-items-center gap-3 mb-3">
-                                        <img src="./src/avatar-1.png" alt="Testimonial Avatar" class="rounded-circle avatar img-object-fit img-fluid">
-                                        <p class="avatar-name m-0">Андрей Третьяков</p>
-                                    </div>
-                                    <div class="text">                                        
-                                        <p>Я пришёл сюда вообще за зонами. Думал, ну, прикольно — "софтик", зоны покупок, что-то постят, можно попробовать. А в итоге залип. Здесь по-другому устроено всё. Никто не орёт «вход по рынку», никто не втирает, что через месяц ты будешь на ламбе. Вместо этого — живая среда, где люди реально работают с головой, обсуждают, ошибаются, разбирают, растут.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Add more testimonials here -->
+                            <!-- слайды -->
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouseSpace" data-bs-slide="prev">
                             <svg class="arrow-left"  aria-hidden="true">
                                 <use xlink:href="./styles/sprite.svg#arrow-left"></use>
                             </svg>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouseSpace" data-bs-slide="next">
                             <svg class="arrow-right"  aria-hidden="true">
                                 <use xlink:href="./styles/sprite.svg#arrow-right"></use>
                             </svg>
                         </button>
-                        <div class="text-center mt-3 mt-sm-5">
-                            <button class="btn bg-blue text-white">Присоединиться</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -448,42 +441,40 @@
             <div class="custom-container">
                 <p class="section-title">Ты долистал до конца страницы. <br> Но, может до начала чего-то нового?</p>
                 <p class="section-text opacity-75 mb-5">Оставляйте заявку обратной связи, чтобы познакомиться с менеджером. Узнать стоимость, подобрать программу обучения, помочь с рассрочкой — вы получите ответ на любой запрос. Не верите? Проверьте сами и получите бонус, если поставите нас в ступор.</p>
-                <a href="#" class="btn btn-dark-light text-white">Свяжитесь со мной</a>
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <ul class="navbar-nav gap-5">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Главное</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html#products">Наши продукты</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="404.html">Библиотека</a>
-                            </li>
-                        </ul>
-                    </div>
+                <button class="btn btn-dark-light text-white mb-5 open-modal">Свяжитесь со мной</button>
+                <nav class="footer-nav mb-5">                    
+                    <ul class="d-flex flex-column flex-sm-row gap-3 gap-sm-5 p-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Главное</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">Наши продукты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="404.html">Библиотека</a>
+                        </li>
+                    </ul>                    
                 </nav>
                 <div class="d-flex justify-content-between flex-wrap gap-5">
                     <div class="">
                         <p class="opacity-75">Мы в социальных сетях:</p>
                         <div class="social-wrap d-flex align-items-center gap-5">
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="#">
+                                <a href="https://www.youtube.com/@dept.trading" target="_blank">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#youtube"></use>
                                     </svg>
                                 </a>
                             </div>
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="#">
+                                <a href="https://www.instagram.com/dept.crypto/" target="_blank">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#instagram"></use>
                                     </svg>
                                 </a>
                             </div>
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="#">
+                                <a href="https://t.me/+XPiBVkR7ns0yOGEy" target="_blank">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#telegram"></use>
                                     </svg>
@@ -509,5 +500,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

@@ -1,20 +1,20 @@
-<!-- Кнопки, которые открывают попап -->
-<button class="open-modal">Связаться</button>
-<button class="open-modal">Регистрация</button>
-<button class="open-modal">Получить доступ</button>
-
 <!-- Модальное окно -->
-<div id="modal" class="modal">
+<div id="modal" class="modal custom-modal">
     <div class="modal-content">
-        <img src="dp-logo.png" alt="DP Logo" class="logo">
+        <svg class="dp">
+            <use xlink:href="./styles/sprite.svg#dp"></use>
+        </svg>        
         <h2>Введите свои данные</h2>
         <p>Это позволит нам связаться с вами для передачи дополнительной информации и оказания поддержки.</p>
         <!-- Форма внутри попапа -->
-        <form>
-            <input type="text" name="name" placeholder="Ф.И.О" required>
-            <input type="tel" name="phone" placeholder="Ваш номер телефона" required>
-            <input type="text" name="telegram" placeholder="Telegram" required>
-            <button type="submit" class="submit-button">Записаться</button>
+        <form class="contact-form">
+            <input class="form-control mb-2" type="text" name="name" placeholder="Ф.И.О" required>
+            <input class="form-control mb-2" type="tel" name="phone" placeholder="Ваш номер телефона" required>
+            <input class="form-control mb-4" type="text" name="telegram" placeholder="Telegram" required>
+            <button type="submit" class="btn btn-primary submit-button">Записаться</button>
         </form>
+        <svg class="close-modal">
+            <use xlink:href="./styles/sprite.svg#close"></use>
+        </svg>
     </div>
 </div>

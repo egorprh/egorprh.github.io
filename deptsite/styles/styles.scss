@@ -1,32 +1,28 @@
 @font-face {
     font-family: 'SF-Pro-Display';
-    src: url('../src/fonts/SF-Pro-Display-Regular.woff2') format('woff2'),
-        url('../src/fonts/SF-Pro-Display-Regular.woff') format('woff'),
-        url('../src/fonts/SF-Pro-Display-Regular.ttf') format('truetype');
+    src: url('../src/fonts/SF-PRO-DISPLAY-REGULAR.woff2') format('woff2'),
+        url('../src/fonts/SF-PRO-DISPLAY-REGULAR.woff') format('woff');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'SF-Pro-Display';
-    src: url('../src/fonts/SF-Pro-Display-Medium.woff2') format('woff2'),
-        url('../src/fonts/SF-Pro-Display-Medium.woff') format('woff'),
-        url('../src/fonts/SF-Pro-Display-Medium.ttf') format('truetype');
+    src: url('../src/fonts/SF-PRO-DISPLAY-MEDIUM.woff2') format('woff2'),
+        url('../src/fonts/SF-PRO-DISPLAY-MEDIUM.woff') format('woff');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'SF-Pro-Display';
-    src: url('../src/fonts/SF-Pro-Display-Semibold.woff2') format('woff2'),
-        url('../src/fonts/SF-Pro-Display-Semibold.woff') format('woff'),
-        url('../src/fonts/SF-Pro-Display-Semibold.ttf') format('truetype');
+    src: url('../src/fonts/SF-PRO-DISPLAY-SEMIBOLD.woff2') format('woff2'),
+        url('../src/fonts/SF-PRO-DISPLAY-SEMIBOLD.woff') format('woff');
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'SF-Pro-Display';
-    src: url('../src/fonts/SF-Pro-Display-Bold.woff2') format('woff2'),
-        url('../src/fonts/SF-Pro-Display-Bold.woff') format('woff'),
-        url('../src/fonts/SF-Pro-Display-Bold.ttf') format('truetype');
+    src: url('../src/fonts/SF-PRO-DISPLAY-BOLD.woff2') format('woff2'),
+        url('../src/fonts/SF-PRO-DISPLAY-BOLD.woff') format('woff');
     font-weight: 700;
 }
 
@@ -177,6 +173,17 @@ a {
     }
 }
 
+.btn-blue {
+    background-color: #147AFF;
+    color: #fff;
+    transition: all .2s;
+
+    &:hover {
+        background-color: darken(#147AFF, 7);
+        color: #fff;
+    }
+}
+
 .badge {
     padding: 5px 20px;
     font-size: 14px;
@@ -213,8 +220,7 @@ a {
         }
 
         @media (max-width: 575px) {
-            padding: 0 15px;
-            font-size: 16px;
+            padding: 0 30px;
 
             svg {
                 width: 15px;
@@ -229,7 +235,7 @@ a {
     }
 
     @media (max-width: 575px) {
-        width: 35px;
+        width: 70px;
         height: 35px;
 
         svg {
@@ -371,8 +377,35 @@ a {
 
 /* Carousel Styles */
 .carousel {
+    .carousel-inner {
+        position: static;
+    }
     .carousel-indicators {
-        bottom: -50px;
+        top: -62px;
+        bottom: auto;
+        justify-content: end;
+        & [data-bs-target] {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #989898;
+
+            &.active {
+                background-color: #147AFF;
+            }
+        }
+
+        @media (max-width: 991px) {
+            margin-right: 125px;
+            margin-left: auto;
+        }
+
+        @media (max-width: 575px) {
+            top: auto;
+            bottom: -65px;
+            margin-right: auto;
+            justify-content: center;
+        }
     }
 
     .carousel-control-prev,
@@ -391,6 +424,10 @@ a {
                 fill: darcen(#989898, 15);
             }
         }
+
+        @media (max-width: 575px) {
+            display: none;
+        }
     }
 
     .carousel-control-prev {
@@ -403,20 +440,117 @@ a {
     }
 }
 
+// Modal 
+.custom-modal.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 
-/* Form styles */
-.form-control {
-    padding: 12px 40px;
-    font-size: 22px;
-    border-radius: 50px;
-
-    @media (max-width: 1199px) {
-        padding: 12px 40px;
+    &.show {
+        display: flex;
     }
 
-    @media (max-width: 575px) {
-        padding: 8px 25px;
-        font-size: 14px;
+    .modal-content {
+        background: white;
+        padding: 60px;
+        border-radius: 0;
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+        @media (max-width: 575px) {
+            padding: 30px 16px;
+        }
+
+        .dp {
+            margin: 0 auto 20px;
+            width: 135px;
+            height: 100px;
+            fill: #BCBCBC;
+            @media (max-width: 575px) {
+                width: 110px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 600;
+            @media (max-width: 575px) {
+                font-size: 26px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            @media (max-width: 575px) {
+                font-size: 16px;
+            }
+        }
+
+        .close-modal {
+            width: 25px;
+            height: 25px;
+            fill: #989898;
+
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            cursor: pointer;
+        }
+
+        .form-control {
+            background-color: #DFDFDF;
+            border: none;
+        }
+
+        .btn {
+            padding: 8px 50px;
+        }
+    }
+}
+
+/* Form styles */
+.contact-form {
+    .form-control {
+        padding: 12px 40px;
+        font-size: 22px;
+        border-radius: 50px;
+
+        @media (max-width: 1199px) {
+            padding: 12px 40px;
+        }
+
+        @media (max-width: 575px) {
+            padding: 8px 25px;
+            font-size: 14px;
+        }
+    }
+
+    .form-check-input {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        background-color: #575757;
+        cursor: pointer;
+    }
+
+    .form-check-input:checked {
+        --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 352' fill='none'%3e%3cpath opacity='0.967' fill-rule='evenodd' clip-rule='evenodd' d='M511.5 13.5C511.5 19.167 511.5 24.833 511.5 30.5C509.92 33.263 508.087 35.93 506 38.5C406.139 138.694 305.973 238.527 205.5 338C177.685 356.439 150.352 355.772 123.5 336C83.6667 296.167 43.8333 256.333 4 216.5C2.19914 213.563 0.699136 210.563 -0.5 207.5C-0.5 204.5 -0.5 201.5 -0.5 198.5C5.01994 182.929 15.6866 177.762 31.5 183C72.139 222.639 112.472 262.639 152.5 303C160.621 308.495 168.954 308.828 177.5 304C277.167 204.333 376.833 104.667 476.5 5.00003C490.961 -3.22297 502.627 -0.389674 511.5 13.5Z' fill='%23fff'/%3e%3c/svg%3e");
+        background-color: #444242;
+        background-size: 85%;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 
@@ -541,6 +675,13 @@ a {
     width: 100%;
     min-height: calc(100vh - 114px);
 
+    @media (max-width: 575px) {
+        background-image: url('../src/dept.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
     .background-video {
         position: absolute;
         width: 100%;
@@ -592,6 +733,7 @@ a {
             backdrop-filter: blur(20px);
             font-size: 35px;
             color: #fff;
+            text-decoration: none;
 
             @media (max-width: 1199px) {
                 gap: 18px;
@@ -748,6 +890,8 @@ a {
         }
 
         .card-preview {
+            overflow: hidden;
+
             .content-wrap {
 
                 .title,
@@ -769,7 +913,7 @@ a {
                     font-size: 42px;
 
                     @media (max-width: 575px) {
-                        font-size: 30px;
+                        font-size: 36px;
                     }
                 }
             }
@@ -779,6 +923,10 @@ a {
                 bottom: 0;
                 right: 0;
                 width: 40%;
+
+                @media (max-width: 575px) {
+                    display: none;
+                }
             }
 
             .img-item-2 {
@@ -795,8 +943,10 @@ a {
                 width: 30%;
                 aspect-ratio: 1/1;
 
+
                 @media (max-width: 575px) {
-                    right: 16px;
+                    right: clamp(-2.5rem, -8.722rem + 28.44vw, 1.5rem);
+                    width: 150px;
                 }
             }
         }
@@ -896,6 +1046,9 @@ a {
 
 /* Testimonials Section */
 .testimonials {
+    .carousel-inner {
+        gap: 50px;
+    }
     .carousel-item {
         .avatar {
             width: 70px;
@@ -1011,10 +1164,18 @@ a {
 .footer {
     background-color: #101010;
 
-    .nav-link {
-        color: #fff;
-        font-size: 20px;
+    .footer-nav {
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #fff;
+            font-size: 20px;
+        }
     }
+
+
 
     .social-item {
         width: 50px;
@@ -1053,72 +1214,7 @@ a {
 }
 
 /* Стили для модального окна */
-.modal {
-    display: none;
-    /* По умолчанию скрыто */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    /* Полупрозрачный фон */
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    /* Убедимся, что попап поверх всего */
-}
 
-.modal.show {
-    display: flex;
-    /* Отображается при добавлении класса "show" */
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    max-width: 90%;
-    /* Адаптивность для мобильных устройств */
-    text-align: center;
-}
-
-.logo {
-    width: 100px;
-    margin-bottom: 20px;
-}
-
-.modal-content h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.modal-content p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.modal-content input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.submit-button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.submit-button:hover {
-    background: #0056b3;
-}
 
 /* Page start  */
 
@@ -1163,6 +1259,11 @@ a {
 
         .category {
             font-size: 18px;
+        }
+
+        .price {
+            width: 25px;
+            height: 25px;
         }
 
         .description {
@@ -1511,6 +1612,11 @@ a {
         .text {
             font-size: 25px;
         }
+
+        .price {
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 
@@ -1525,10 +1631,6 @@ a {
 
         @media (max-width: 991px) {
             grid-template-columns: repeat(1, 1fr);
-            background-image: url(../src/svg/curve.svg);
-            background-position: center;
-            background-size: 80%;
-            background-repeat: no-repeat;
 
             .card-1,
             .card-2,
@@ -1812,6 +1914,10 @@ a {
         .title {
             font-size: 50px;
             font-weight: 600;
+
+            @media (max-width: 575px) {
+                font-size: 30px;
+            }
         }
 
         .text {
@@ -1828,11 +1934,26 @@ a {
             font-size: 25px;
         }
 
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 170px);
+            gap: 16px 8px;
+
+            @media (max-width: 991px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 575px) {
+                // grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         .btn {
             font-size: 20px;
             line-height: 1;
-            padding: 6px 40px;
+            padding: 8px 40px;
             background-color: #333333;
+            text-decoration: none;
 
             &:hover {
                 background-color: #252525;
@@ -1840,7 +1961,7 @@ a {
 
             @media (max-width: 991px) {
                 font-size: 16px;
-                padding: 6px 35px;
+                padding: 8px 35px;
             }
         }
     }
@@ -1859,10 +1980,6 @@ a {
 
         @media (max-width: 991px) {
             flex-direction: column;
-            background-image: url('../src/svg/curve.svg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 80%;
         }
     }
 
