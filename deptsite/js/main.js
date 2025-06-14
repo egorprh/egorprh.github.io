@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const formSource = button.getAttribute('data-form-source'); // Берем значение data-атрибута
 
-            fetch('../popup.html')
+            fetch(window.location.origin + '/popup.html')
                 .then(response => response.text())
                 .then(html => {
                     const modalContainer = document.createElement('div');
@@ -49,114 +49,51 @@ function initModal(modalContainer) {
     });
 }
 
-const dataSets = {
-    dataIndex: [
-        {
-            id: 45,
-            avatar: 'https://i.pinimg.com/originals/7f/5b/b6/7f5bb635d56379f8b5676918675c34fc.jpg',
-            fio: 'Барсик Байт',
-            text: 'Программирование — это как ловить мышей: надо уметь быстро реагировать, иначе баги разбегаются по всей системе...'
-        },
-        {
-            id: 68,
-            avatar: 'https://i.pinimg.com/736x/39/f5/f0/39f5f0447e6f14abbe3299af038e7220.jpg',
-            fio: 'Борис Джаваскриптов',
-            text: 'Идеальный код — миф, как диета без срывов. Всегда найдётся баг, который спрятался в самых неожиданных местах...'
-        },
-        {
-            id: 23,
-            avatar: 'https://i.ytimg.com/vi/ocuVRR22DSs/maxresdefault.jpg',
-            fio: 'Серега Дебагович',
-            text: 'Баги — это не ошибки, а пасхалки, которые разработчик оставляет будущему себе...'
-        }
-    ],
-    dataSpace: [
-        {
-            id: 40,
-            avatar: 'https://content.onliner.by/news/1100x5616/56adc64398381dccf63b4f4bf282d5cd.jpeg',
-            fio: 'Макс Клавиатуркин',
-            text: 'Каждый разработчик знает, что лучший способ починить баг — сделать вид, что его нет. Но если вдруг код реально работает идеально, то это повод для беспокойства...'
-        },
-        {
-            id: 85,
-            avatar: 'https://i.pinimg.com/originals/36/1a/82/361a82cd45c61f4bbbc4d46ec6b42359.jpg',
-            fio: 'Лиза ГитПуш',
-            text: 'Коммит перед пятничным вечером — самый рискованный поступок. Нужно быть готовым к тому, что в понедельник придётся объяснять коллегам, что случилось...'
-        },
-        {
-            id: 53,
-            avatar: 'https://i.pinimg.com/736x/b8/ec/e8/b8ece86fa2752d194833f2175cb417c1.jpg',
-            fio: 'Паша Логфайл',
-            text: 'Если код не работает, просто добавь больше логов. Если он всё ещё не работает — удали лишние логи...'
-        }
-    ],
-    dataClosed: [
-        {
-            id: 12,
-            avatar: 'https://i.pinimg.com/originals/7f/5b/b6/7f5bb635d56379f8b5676918675c34fc.jpg',
-            fio: 'Кот Компиляторович',
-            text: 'Компиляция — это искусство. Иногда кажется, что код идеально написан, но компилятор с тобой не согласен...'
-        },
-        {
-            id: 56,
-            avatar: 'https://i.pinimg.com/736x/39/f5/f0/39f5f0447e6f14abbe3299af038e7220.jpg',
-            fio: 'Дэн Мержов',
-            text: 'Слияние веток — это как семейный ужин: издалека кажется безобидным, но в процессе понимаешь, что лучше бы этого вообще не было...'
-        },
-        {
-            id: 21,
-            avatar: 'https://i.pinimg.com/originals/b1/4c/89/b14c8933d3da9e048bbdd1fdd934875a.jpg',
-            fio: 'Олег Фиксатор',
-            text: 'Если ты программист, то исправление багов — это твоя суперспособность. Но чем больше фиксов ты делаешь, тем больше новых багов появляется...'
-        }
-    ],
-    dataDept: [
-        {
-            id: 45,
-            avatar: 'https://i.pinimg.com/736x/69/03/f3/6903f3d9317a0cb430681609ad0a8061.jpg',
-            fio: 'Том СтекТрейсер',
-            text: 'Стек трейсы — это как карта сокровищ: они вроде бы показывают путь, но на деле ты просто ходишь кругами...'
-        },
-        {
-            id: 98,
-            avatar: 'https://i.pinimg.com/736x/28/8f/5d/288f5db1695f2047925f5d5b1f2224d6.jpg',
-            fio: 'Виктор ГлобальнаяПеременная',
-            text: 'Использование глобальных переменных — это как оставлять разбросанные вещи по комнате: сначала кажется удобным, но потом ты не можешь найти нужное...'
-        },
-        {
-            id: 45,
-            avatar: 'https://i.pinimg.com/originals/97/b0/81/97b081b87b4b06e0783419ad4ed42bc0.jpg',
-            fio: 'Женя НулПоинт',
-            text: 'NullPointerException — лучший друг программиста. Он приходит без предупреждения и рушит все планы. Если ты не знаешь, где ошибка, просто добавь `try/catch`...'
-        }
-    ]
-};
+// Карусель, получаем карточки и рендерим их
+async function fetchJsonFiles() {
+    const files = {
+        dataIndex: "index.json",
+        dataSpace: "d-space.json",
+        dataDept: "exchange.json",
+        dataClosed: "d-closed.json"
+    };
 
-function populateCarousels() {
+    const dataSets = {};
+
+    for (const key in files) {
+        try {
+            const response = await fetch(window.location.origin + `/src/reviews/${files[key]}`);
+            if (!response.ok) throw new Error(`Ошибка ${response.status}`);
+            const data = await response.json();
+            dataSets[key] = data; // Записываем данные
+        } catch (error) {
+            console.error(`Ошибка загрузки ${files[key]}:`, error);
+        }
+    }
+
+    populateCarousels(dataSets);
+    new bootstrap.Carousel('.carousel');
+}
+
+function populateCarousels(dataSets) {
     document.querySelectorAll('.carousel').forEach(carousel => {
         const type = carousel.getAttribute('data-type');
         const data = dataSets[type];
 
         if (data) {
             const carouselInner = carousel.querySelector('.carousel-inner');
-
-            // Очищаем контейнер перед добавлением новых элементов
             carouselInner.innerHTML = '';
-
             let indicatorsHTML = '';
-
             data.sort((a, b) => a.id - b.id);
-
             data.forEach((item, index) => {
                 const activeClass = index === 0 ? 'active' : '';
 
-                // Добавляем слайды
                 carouselInner.innerHTML += `
                     <div class="carousel-item bg-light p-4 ${activeClass}">
                         <div>
                             <div class="d-flex align-items-center gap-3 mb-3">
-                                <img src="${item.avatar}" alt="Testimonial Avatar" class="rounded-circle avatar img-object-fit img-fluid">
-                                <p class="avatar-name m-0">${item.fio}</p>
+                                <img src="${item.img}" alt="Testimonial Avatar" class="rounded-circle avatar img-object-fit img-fluid">
+                                <p class="avatar-name m-0">${item.name}</p>
                             </div>
                             <div class="text">
                                 <p>${item.text}</p>
@@ -165,19 +102,19 @@ function populateCarousels() {
                     </div>
                 `;
 
-                // Создает кнопки индикаторы
                 indicatorsHTML += `
                     <button type="button" data-bs-target="#${carousel.id}" data-bs-slide-to="${index}" class="${activeClass}"></button>
                 `;
             });
 
-            // Добавляем кнопки после очистки и наполнения контейнера
             carouselInner.innerHTML += `<div class="carousel-indicators">${indicatorsHTML}</div>`;
         } 
     });
 }
 
-populateCarousels();
+fetchJsonFiles(); // Запускаем загрузку, и после неё вызываем populateCarousels()
+
+
 
 function validateForm(button) {
     const form = button.closest("form");
@@ -299,6 +236,41 @@ function showNotification(type, form) {
         notification.remove();
     }, 2000);
 }
+
+
+// Торговые журналы
+async function fetchMonthButtons() {
+    try {
+        const response = await fetch("src/reviews/trade-magazines.json");
+        if (!response.ok) throw new Error(`Ошибка ${response.status}`);
+        const data = await response.json();
+        renderButtons(data);
+    } catch (error) {
+        console.error("Ошибка загрузки monthButtons.json:", error);
+    }
+}
+
+function renderButtons(data) {
+    const buttonContainer = document.getElementById("month-buttons");
+    
+    buttonContainer.innerHTML = "";
+
+    // Сортируем по id и берем последние 4 элемента
+    const sortedData = [...data].sort((a, b) => a.id - b.id).slice(-4);
+
+    sortedData.forEach(item => {
+        const buttonHTML = `<a href="${item.url}" target="_blank" class="btn text-white">${item.name}</a>`;
+        buttonContainer.innerHTML += buttonHTML;
+    });
+}
+
+// Загружаем JSON **только если есть блок `#month-buttons`**
+if (document.getElementById("month-buttons")) {
+    fetchMonthButtons();
+}
+
+
+
 
 
 
