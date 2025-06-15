@@ -10,11 +10,15 @@ const routes = {
 };
 
 function showLoader() {
-  document.getElementById("loader").style.display = "block";
+  const loader = document.getElementById("loader");
+  loader.style.display = "block";
+  loader.classList.remove("d-none"); // Если используете Bootstrap
 }
 
 function hideLoader() {
-  document.getElementById("loader").style.display = "none";
+    const loader = document.getElementById("loader");
+    loader.style.display = "none";
+    loader.classList.add("d-none"); // Если используете Bootstrap
 }
 
 function extractBody(html) {
@@ -24,7 +28,7 @@ function extractBody(html) {
 
 // Обновленная функция loadPage
 function loadPage(page) {
-  showLoader();
+  // showLoader();
   fetch(page)
     .then(res => res.text())
     .then(html => {
@@ -44,7 +48,7 @@ function loadPage(page) {
       document.getElementById("app").innerHTML = "<p>Ошибка загрузки страницы.</p>";
       console.error(err);
     })
-    .finally(hideLoader);
+    // .finally(hideLoader);
 }
 
 // Функция для обработки кликов по ссылкам
