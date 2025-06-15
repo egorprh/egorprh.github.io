@@ -28,7 +28,7 @@ function extractBody(html) {
 
 // Обновленная функция loadPage
 function loadPage(page) {
-  // showLoader();
+  showLoader();
   fetch(page)
     .then(res => res.text())
     .then(html => {
@@ -48,7 +48,7 @@ function loadPage(page) {
       document.getElementById("app").innerHTML = "<p>Ошибка загрузки страницы.</p>";
       console.error(err);
     })
-    // .finally(hideLoader);
+    .finally(hideLoader);
 }
 
 // Функция для обработки кликов по ссылкам
