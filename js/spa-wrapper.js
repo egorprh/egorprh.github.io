@@ -22,6 +22,7 @@ function extractBody(html) {
   return match ? match[1] : html;
 }
 
+// Обновленная функция loadPage
 function loadPage(page) {
   showLoader();
   fetch(page)
@@ -33,6 +34,11 @@ function loadPage(page) {
       setupPopupHandlers(); // Для работы попапов
       fetchJsonFiles();
       fetchMonthButtons();
+      
+      // Обработка якоря после загрузки
+      if (window.location.hash) {
+        scrollToAnchor(window.location.hash.substring(1));
+      }
     })
     .catch(err => {
       document.getElementById("app").innerHTML = "<p>Ошибка загрузки страницы.</p>";
@@ -48,31 +54,18 @@ function handleLinkClick(event) {
   
   const href = link.getAttribute('href');
   
-  // Обработка всех якорных ссылок (и #anchor и /page.html#anchor)
-  if (href && (href.includes('#') || href.startsWith('#'))) {
+  // Обработка якорных ссылок
+  if (href && href.includes('#')) {
     event.preventDefault();
-    
-    // Разделяем путь и якорь
     const [path, hash] = href.split('#');
-    const targetId = hash || path; // если href был просто "#products", то path будет пустым
     
     if (path && path !== window.location.pathname) {
-      // Если это переход на другую страницу с якорем
-      router.navigate(path, () => {
-        // После загрузки страницы прокручиваем к якорю
-        if (targetId) {
-          const target = document.getElementById(targetId);
-          if (target) {
-            setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
-          }
-        }
-      });
+      // Для переходов между страницами
+      const fullPath = hash ? `${path}#${hash}` : path;
+      router.navigate(fullPath);
     } else {
-      // Если якорь на текущей странице
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Для якорей на текущей странице
+      scrollToAnchor(hash);
     }
     return;
   }
@@ -82,6 +75,18 @@ function handleLinkClick(event) {
     event.preventDefault();
     router.navigate(href);
   }
+}
+
+// Функция для прокрутки к якорю
+function scrollToAnchor(anchorId) {
+  if (!anchorId) return;
+  
+  setTimeout(() => {
+    const target = document.getElementById(anchorId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 300);
 }
 
 // Функция для добавления обработчиков на все ссылки
@@ -100,24 +105,23 @@ router.on(
 // Инициализация обработчиков ссылок при первой загрузке
 attachLinkHandlers();
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Обработка якоря при первоначальной загрузке страницы
-  if (window.location.hash) {
-    const target = document.getElementById(window.location.hash.substring(1));
-    if (target) {
-      setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
-    }
-  }
-});
+// Модифицируем инициализацию роутера
+router.on({
+  '/': () => loadPage('index.html'),
+  '/index.html': () => {
+    const [path, hash] = window.location.href.split('#');
+    loadPage('index.html');
+    if (hash) setTimeout(() => scrollToAnchor(hash), 500);
+  },
+  '/d-closed.html': () => loadPage('d-closed.html'),
+  '/d-space.html': () => loadPage('d-space.html'),
+  '/start.html': () => loadPage('start.html'),
+  '/dept-exchange.html': () => loadPage('dept-exchange.html')
+}).resolve();
 
-// И добавьте хук в роутер для обработки якорей после навигации
-router.hooks({
-  after: () => {
-    if (window.location.hash) {
-      const target = document.getElementById(window.location.hash.substring(1));
-      if (target) {
-        setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
-      }
-    }
-  }
-});
+// Обработка при загрузке страницы
+if (window.location.hash) {
+  setTimeout(() => {
+    scrollToAnchor(window.location.hash.substring(1));
+  }, 800);
+}
