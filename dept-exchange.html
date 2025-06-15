@@ -8,252 +8,262 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="bg-dark text-white sticky-top">
-        <nav class="custom-container navbar navbar-expand-xl navbar-dark">
-            <a class="navbar-brand" href="index.html">
-                <img src="./src/svg/logo-header.svg" alt="Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav my-5 my-xl-0">
-                    <li class="nav-item me-0 me-lg-3 me-xl-5">
-                        <a class="nav-link" aria-current="page" href="index.html">Главное</a>
-                    </li>
-                    <li class="nav-item me-0 me-lg-3 me-xl-5">
-                        <a class="nav-link" href="index.html#products">Наши продукты</a>
-                    </li>
-                    <li class="nav-item me-0 me-lg-3 me-xl-5">
-                        <a class="nav-link" href="404.html">Библиотека</a>
-                    </li>
-                </ul>
-                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-                    <div class="social-wrap d-lg-none d-flex align-items-center gap-3">
-                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                            <a href="#">
-                                <svg class="">
-                                    <use xlink:href="./styles/sprite.svg#youtube"></use>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                            <a href="#">
-                                <svg class="">
-                                    <use xlink:href="./styles/sprite.svg#instagram"></use>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                            <a href="#">
-                                <svg class="">
-                                    <use xlink:href="./styles/sprite.svg#telegram"></use>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <button class="btn btn-dark-light link-phone border-0 open-modal" data-form-source="dept-exchange__header">
-                        <svg class="phone">
-                            <use xlink:href="./styles/sprite.svg#phone"></use>
-                        </svg>
-                        Свяжитесь со мной
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="loader" class="d-none">
+        <img src="src/logo_animate.gif" alt="Загрузка...">
+    </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="section section-header">
-            <div class="custom-container">
-                <div class="d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between">
-                    <div>
-                        <h1 class="title-dep-ex">Dept Exchange</h1>
-                        <p class="desc">Криптовалютный обменник</p>
-                    </div>
-                    <img class="img" src="./src/dept-exchange.png" alt="">    
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section class="section about-us">
-            <div class="custom-container">
-                <h2 class="section-title">Сервис, который ценит простоту, прозрачность и безопасность.</h2>
-                <p class="section-text">Мы ориентированы на профессиональных участников рынка и тех, кто только начинает работать с криптовалютой, но хочет быть уверен в каждом этапе сделки. Без скрытых условий, без навязанных решений. Только точные расчёты и персональный подход.</p>
-            </div>
-        </section>
-
-        <!-- What We Offer Section -->
-        <section class="section what-we-offer offer">
-            <div class="custom-container">
-                <h2 class="section-title">Что мы предлагаем</h2>
-                <div class="offer-grid">
-
-                    <div class="offer-card">
-                        <div class="offer-img-1 d-flex align-items-end justify-content-center">
-                            <img src="./src/offer-img-1.png" class="" alt="">
-                        </div>
-                        <div class="custom-card-body bg-light">
-                            <div class="title mb-2">Прямой обмен</div>
-                            <div class="text">Работаем без посредников. Все сделки проходят напрямую с нашей командой.</div>
-                        </div>
-                    </div>
-
-                    <div class="offer-card d-none d-lg-block">
-                        <div class="custom-card-body bg-light">
-                            <div class="title mb-2">Фиксацию курса</div>
-                            <div class="text">Закрепляем курс на момент оформления заявки. Вы знаете точную сумму заранее.</div>
-                            <div class="offer-img-2  mt-5 bg-white">
-                                <img src="./src/offer-img-2.png" class="" alt="">
-                            </div>
-                        </div>                        
-                    </div>
-
-                    <div class="offer-card d-block d-lg-none">
-                        <div class="offer-img-2-2 d-flex align-items-end justify-content-center">
-                            <img src="./src/offer-img-2-2.png" class="" alt="">
-                        </div>
-                        <div class="custom-card-body bg-light">
-                            <div class="title mb-2">Фиксацию курса</div>
-                            <div class="text">Закрепляем курс на момент оформления заявки. Вы знаете точную сумму заранее.</div>
-                        </div>
-                    </div>
-
-                    <div class="offer-card">
-                        <div class="offer-img-3">
-                            <img src="./src/offer-img-3.png" alt="">
-                        </div>
-                        <div class="custom-card-body bg-light">
-                            <div class="title mb-2">Быстрое исполнение</div>
-                            <div class="text">Среднее время сделки — от 5 до 15 минут. Без задержек и ожиданий.</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Integration Section -->
-        <section class="section integration">
-            <div class="custom-container">
-                <h2 class="section-title">
-                    Интеграция сразу в
-                    <svg class="telegram">
-                        <use xlink:href="./styles/sprite.svg#telegram"></use>
-                    </svg>
-                     Telegram
-                </h2>
-                <div class="integration-grid">
-                    <div class="card-1 bg-light">
-                        <div class="card-body d-flex flex-column align-items-start h-100">
-                            <div class="card-title mb-3">Обменивай валюту <br> прямо <span>сейчас</span></div>
-                            <div class="card-text">Обмен валюты не ради азарта, а потому что деньги - это ответственность.</div>
-                            <a href="https://t.me/deptexchange" target="_blank" class="btn btn-dark text-decoration-none mt-5 mt-xl-auto">Обменять</a>
-                        </div>
-                    </div>
-                    <div class="card-2">
-                        <img src="./src/integration-card-2.png" class="img-object-fit" alt="">
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->        
-        <section class="section testimonials">
-            <div class="custom-container">
-                <h2 class="section-title">Отзывы пользователей</h2>
-                <div class="position-relative pt-sm-5 pb-5 pb-sm-0">
-                    <div id="carouseClosed" class="carousel slide" data-bs-ride="carousel" data-type="dataDept">
-
-                        <div class="carousel-inner">
-                            <!-- слайды -->
-                        </div>
-                        
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouseClosed" data-bs-slide="prev">
-                            <svg class="arrow-left"  aria-hidden="true">
-                                <use xlink:href="./styles/sprite.svg#arrow-left"></use>
-                            </svg>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouseClosed" data-bs-slide="next">
-                            <svg class="arrow-right"  aria-hidden="true">
-                                <use xlink:href="./styles/sprite.svg#arrow-right"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="section footer text-white">
-            <div class="custom-container">
-                <p class="section-title">Ты долистал до конца страницы. <br> Но, может до начала чего-то нового?</p>
-                <p class="section-text opacity-75 mb-5">Оставляйте заявку обратной связи, чтобы познакомиться с менеджером. Узнать стоимость, подобрать программу обучения, помочь с рассрочкой — вы получите ответ на любой запрос. Не верите? Проверьте сами и получите бонус, если поставите нас в ступор.</p>
-                <button class="btn btn-dark-light text-white mb-5 open-modal" data-form-source="dept-exchange__footer">Свяжитесь со мной</button>
-                <nav class="footer-nav mb-5">                    
-                    <ul class="d-flex flex-column flex-sm-row gap-3 gap-sm-5 p-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Главное</a>
+    <div id="app">
+    
+        <!-- Header -->
+        <header class="bg-dark text-white sticky-top">
+            <nav class="custom-container navbar navbar-expand-xl navbar-dark">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./src/svg/logo-header.svg" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav my-5 my-xl-0">
+                        <li class="nav-item me-0 me-lg-3 me-xl-5">
+                            <a class="nav-link" aria-current="page" href="index.html">Главное</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#products">Наши продукты</a>
+                        <li class="nav-item me-0 me-lg-3 me-xl-5">
+                            <a class="nav-link" href="index.html#products">Наши продукты</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item me-0 me-lg-3 me-xl-5">
                             <a class="nav-link" href="404.html">Библиотека</a>
                         </li>
-                    </ul>                    
-                </nav>
-                <div class="d-flex justify-content-between flex-wrap gap-5">
-                    <div class="">
-                        <p class="opacity-75">Мы в социальных сетях:</p>
-                        <div class="social-wrap d-flex align-items-center gap-5">
+                    </ul>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div class="social-wrap d-lg-none d-flex align-items-center gap-3">
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="https://www.youtube.com/@dept.trading" target="_blank">
+                                <a href="#">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#youtube"></use>
                                     </svg>
                                 </a>
                             </div>
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="https://www.instagram.com/dept.crypto/" target="_blank">
+                                <a href="#">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#instagram"></use>
                                     </svg>
                                 </a>
                             </div>
                             <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
-                                <a href="https://t.me/+XPiBVkR7ns0yOGEy" target="_blank">
+                                <a href="#">
                                     <svg class="">
                                         <use xlink:href="./styles/sprite.svg#telegram"></use>
                                     </svg>
                                 </a>
                             </div>
                         </div>
+                        <button class="btn btn-dark-light link-phone border-0 open-modal" data-form-source="dept-exchange__header">
+                            <svg class="phone">
+                                <use xlink:href="./styles/sprite.svg#phone"></use>
+                            </svg>
+                            Свяжитесь со мной
+                        </button>
                     </div>
-                    <div class="client-wrap d-flex align-items-center">
-                        <div class="client-item">
-                            <img src="./src/svg/client-1.svg" alt="">
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="section section-header">
+                <div class="custom-container">
+                    <div class="d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between">
+                        <div>
+                            <h1 class="title-dep-ex">Dept Exchange</h1>
+                            <p class="desc">Криптовалютный обменник</p>
                         </div>
-                        <div class="client-item">
-                            <img src="./src/svg/client-2.svg" alt="">
+                        <img class="img" src="./src/dept-exchange.png" alt="">    
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us Section -->
+            <section class="section about-us">
+                <div class="custom-container">
+                    <h2 class="section-title">Сервис, который ценит простоту, прозрачность и безопасность.</h2>
+                    <p class="section-text">Мы ориентированы на профессиональных участников рынка и тех, кто только начинает работать с криптовалютой, но хочет быть уверен в каждом этапе сделки. Без скрытых условий, без навязанных решений. Только точные расчёты и персональный подход.</p>
+                </div>
+            </section>
+
+            <!-- What We Offer Section -->
+            <section class="section what-we-offer offer">
+                <div class="custom-container">
+                    <h2 class="section-title">Что мы предлагаем</h2>
+                    <div class="offer-grid">
+
+                        <div class="offer-card">
+                            <div class="offer-img-1 d-flex align-items-end justify-content-center">
+                                <img src="./src/offer-img-1.png" class="" alt="">
+                            </div>
+                            <div class="custom-card-body bg-light">
+                                <div class="title mb-2">Прямой обмен</div>
+                                <div class="text">Работаем без посредников. Все сделки проходят напрямую с нашей командой.</div>
+                            </div>
                         </div>
-                        <div class="client-item">
-                            <img src="./src/svg/client-3.svg" alt="">
+
+                        <div class="offer-card d-none d-lg-block">
+                            <div class="custom-card-body bg-light">
+                                <div class="title mb-2">Фиксацию курса</div>
+                                <div class="text">Закрепляем курс на момент оформления заявки. Вы знаете точную сумму заранее.</div>
+                                <div class="offer-img-2  mt-5 bg-white">
+                                    <img src="./src/offer-img-2.png" class="" alt="">
+                                </div>
+                            </div>                        
+                        </div>
+
+                        <div class="offer-card d-block d-lg-none">
+                            <div class="offer-img-2-2 d-flex align-items-end justify-content-center">
+                                <img src="./src/offer-img-2-2.png" class="" alt="">
+                            </div>
+                            <div class="custom-card-body bg-light">
+                                <div class="title mb-2">Фиксацию курса</div>
+                                <div class="text">Закрепляем курс на момент оформления заявки. Вы знаете точную сумму заранее.</div>
+                            </div>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-img-3">
+                                <img src="./src/offer-img-3.png" alt="">
+                            </div>
+                            <div class="custom-card-body bg-light">
+                                <div class="title mb-2">Быстрое исполнение</div>
+                                <div class="text">Среднее время сделки — от 5 до 15 минут. Без задержек и ожиданий.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Integration Section -->
+            <section class="section integration">
+                <div class="custom-container">
+                    <h2 class="section-title">
+                        Интеграция сразу в
+                        <svg class="telegram">
+                            <use xlink:href="./styles/sprite.svg#telegram"></use>
+                        </svg>
+                        Telegram
+                    </h2>
+                    <div class="integration-grid">
+                        <div class="card-1 bg-light">
+                            <div class="card-body d-flex flex-column align-items-start h-100">
+                                <div class="card-title mb-3">Обменивай валюту <br> прямо <span>сейчас</span></div>
+                                <div class="card-text">Обмен валюты не ради азарта, а потому что деньги - это ответственность.</div>
+                                <a href="https://t.me/deptexchange" target="_blank" class="btn btn-dark text-decoration-none mt-5 mt-xl-auto">Обменять</a>
+                            </div>
+                        </div>
+                        <div class="card-2">
+                            <img src="./src/integration-card-2.png" class="img-object-fit" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->        
+            <section class="section testimonials">
+                <div class="custom-container">
+                    <h2 class="section-title">Отзывы пользователей</h2>
+                    <div class="position-relative pt-sm-5 pb-5 pb-sm-0">
+                        <div id="carouseClosed" class="carousel slide" data-bs-ride="carousel" data-type="dataDept">
+
+                            <div class="carousel-inner">
+                                <!-- слайды -->
+                            </div>
+                            
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouseClosed" data-bs-slide="prev">
+                                <svg class="arrow-left"  aria-hidden="true">
+                                    <use xlink:href="./styles/sprite.svg#arrow-left"></use>
+                                </svg>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouseClosed" data-bs-slide="next">
+                                <svg class="arrow-right"  aria-hidden="true">
+                                    <use xlink:href="./styles/sprite.svg#arrow-right"></use>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
-    </main>
+            </section>
+
+            <!-- Footer -->
+            <footer class="section footer text-white">
+                <div class="custom-container">
+                    <p class="section-title">Ты долистал до конца страницы. <br> Но, может до начала чего-то нового?</p>
+                    <p class="section-text opacity-75 mb-5">Оставляйте заявку обратной связи, чтобы познакомиться с менеджером. Узнать стоимость, подобрать программу обучения, помочь с рассрочкой — вы получите ответ на любой запрос. Не верите? Проверьте сами и получите бонус, если поставите нас в ступор.</p>
+                    <button class="btn btn-dark-light text-white mb-5 open-modal" data-form-source="dept-exchange__footer">Свяжитесь со мной</button>
+                    <nav class="footer-nav mb-5">                    
+                        <ul class="d-flex flex-column flex-sm-row gap-3 gap-sm-5 p-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Главное</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#products">Наши продукты</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="404.html">Библиотека</a>
+                            </li>
+                        </ul>                    
+                    </nav>
+                    <div class="d-flex justify-content-between flex-wrap gap-5">
+                        <div class="">
+                            <p class="opacity-75">Мы в социальных сетях:</p>
+                            <div class="social-wrap d-flex align-items-center gap-5">
+                                <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                    <a href="https://www.youtube.com/@dept.trading" target="_blank">
+                                        <svg class="">
+                                            <use xlink:href="./styles/sprite.svg#youtube"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                    <a href="https://www.instagram.com/dept.crypto/" target="_blank">
+                                        <svg class="">
+                                            <use xlink:href="./styles/sprite.svg#instagram"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="social-item d-flex align-items-center justify-content-center rounded-pill">
+                                    <a href="https://t.me/+XPiBVkR7ns0yOGEy" target="_blank">
+                                        <svg class="">
+                                            <use xlink:href="./styles/sprite.svg#telegram"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-wrap d-flex align-items-center">
+                            <div class="client-item">
+                                <img src="./src/svg/client-1.svg" alt="">
+                            </div>
+                            <div class="client-item">
+                                <img src="./src/svg/client-2.svg" alt="">
+                            </div>
+                            <div class="client-item">
+                                <img src="./src/svg/client-3.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/navigo@8.11.1/lib/navigo.min.js"></script>
+    <script src="/js/spa-wrapper.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

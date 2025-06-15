@@ -1,10 +1,12 @@
 // Загрузка попапа в дом, открытие попапа
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => setupPopupHandlers());
+
+function setupPopupHandlers() {
     const openButtons = document.querySelectorAll('.open-modal');
 
     openButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const formSource = button.getAttribute('data-form-source'); // Берем значение data-атрибута
+            const formSource = button.getAttribute('data-form-source');
 
             fetch(window.location.origin + '/popup.html')
                 .then(response => response.text())
@@ -13,17 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalContainer.innerHTML = html;
                     document.body.appendChild(modalContainer);
 
-                    // Ищем форму в попапе и записываем значение в скрытый input
                     const popupForm = modalContainer.querySelector('.contact-form'); 
                     const hiddenInput = modalContainer.querySelector('.contact-form input[name="form_source"]');
-                    hiddenInput.value = formSource; 
+                    if (hiddenInput) hiddenInput.value = formSource; 
 
                     initModal(modalContainer);
                 })
                 .catch(error => console.error('Ошибка загрузки попапа:', error));
         });
     });
-});
+}
 
 
 function initModal(modalContainer) {
@@ -72,7 +73,11 @@ async function fetchJsonFiles() {
     }
 
     populateCarousels(dataSets);
-    new bootstrap.Carousel('.carousel');
+    
+    // Инициализируем все карусели на странице
+    document.querySelectorAll('.carousel').forEach(carouselElement => {
+        new bootstrap.Carousel(carouselElement);
+    });
 }
 
 function populateCarousels(dataSets) {
@@ -253,15 +258,20 @@ async function fetchMonthButtons() {
 function renderButtons(data) {
     const buttonContainer = document.getElementById("month-buttons");
     
-    buttonContainer.innerHTML = "";
+    if (!buttonContainer) {
+        // console.error('Элемент с id "month-buttons" не найден в DOM');
+        return;
+    }
 
     // Сортируем по id и берем последние 4 элемента
     const sortedData = [...data].sort((a, b) => a.id - b.id).slice(-4);
+    
+    // Собираем все кнопки в одну строку
+    const buttonsHTML = sortedData.map(item => 
+        `<a href="${item.url}" target="_blank" class="btn text-white">${item.name}</a>`
+    ).join('');
 
-    sortedData.forEach(item => {
-        const buttonHTML = `<a href="${item.url}" target="_blank" class="btn text-white">${item.name}</a>`;
-        buttonContainer.innerHTML += buttonHTML;
-    });
+    buttonContainer.innerHTML = buttonsHTML;
 }
 
 // Загружаем JSON **только если есть блок `#month-buttons`**
