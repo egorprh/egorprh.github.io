@@ -6,7 +6,7 @@ function setupPopupHandlers() {
 
     openButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const formSource = button.getAttribute('data-form-source');
+            const formSource = button.getAttribute('data-form-source'); // Берем значение data-атрибута
 
             fetch(window.location.origin + '/popup.html')
                 .then(response => response.text())
@@ -15,6 +15,7 @@ function setupPopupHandlers() {
                     modalContainer.innerHTML = html;
                     document.body.appendChild(modalContainer);
 
+                    // Ищем форму в попапе и записываем значение в скрытый input
                     const popupForm = modalContainer.querySelector('.contact-form'); 
                     const hiddenInput = modalContainer.querySelector('.contact-form input[name="form_source"]');
                     if (hiddenInput) hiddenInput.value = formSource; 
@@ -52,6 +53,7 @@ function initModal(modalContainer) {
 
 // Карусель, получаем карточки и рендерим их
 async function fetchJsonFiles() {
+    //TODO Грузить только нужный файл из дата атрибута, а не каждый раз все
     const files = {
         dataIndex: "index.json",
         dataSpace: "d-space.json",

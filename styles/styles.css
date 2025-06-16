@@ -1,22 +1,22 @@
 @charset "UTF-8";
 @font-face {
   font-family: "SF-Pro-Display";
-  src: url("../src/fonts/SF-PRO-DISPLAY-REGULAR.woff2") format("woff2"), url("../src/fonts/SF-PRO-DISPLAY-REGULAR.woff") format("woff");
+  src: url("../src/fonts/SF-Pro-Display-Regular.woff2") format("woff2"), url("../src/fonts/SF-Pro-Display-Regular.woff") format("woff");
   font-weight: 400;
 }
 @font-face {
   font-family: "SF-Pro-Display";
-  src: url("../src/fonts/SF-PRO-DISPLAY-MEDIUM.woff2") format("woff2"), url("../src/fonts/SF-PRO-DISPLAY-MEDIUM.woff") format("woff");
+  src: url("../src/fonts/SF-Pro-Display-Medium.woff2") format("woff2"), url("../src/fonts/SF-Pro-Display-Medium.woff") format("woff");
   font-weight: 500;
 }
 @font-face {
   font-family: "SF-Pro-Display";
-  src: url("../src/fonts/SF-PRO-DISPLAY-SEMIBOLD.woff2") format("woff2"), url("../src/fonts/SF-PRO-DISPLAY-SEMIBOLD.woff") format("woff");
+  src: url("../src/fonts/SF-Pro-Display-Semibold.woff2") format("woff2"), url("../src/fonts/SF-Pro-Display-Semibold.woff") format("woff");
   font-weight: 600;
 }
 @font-face {
   font-family: "SF-Pro-Display";
-  src: url("../src/fonts/SF-PRO-DISPLAY-BOLD.woff2") format("woff2"), url("../src/fonts/SF-PRO-DISPLAY-BOLD.woff") format("woff");
+  src: url("../src/fonts/SF-Pro-Display-Bold.woff2") format("woff2"), url("../src/fonts/SF-Pro-Display-Bold.woff") format("woff");
   font-weight: 700;
 }
 html {
