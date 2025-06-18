@@ -371,11 +371,11 @@ a:hover {
 }
 
 .card-body-mini {
-  padding: 22px;
+  padding: 20px;
   border-radius: 20px;
 }
 .card-body-mini .title {
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 600;
   line-height: 1;
 }
@@ -493,9 +493,9 @@ a:hover {
   }
 }
 .custom-modal.modal .modal-content .dp {
-  margin: 0 auto 20px;
-  width: 135px;
-  height: 100px;
+  margin: 0 auto 10px;
+  width: 105px;
+  height: 77px;
   fill: #BCBCBC;
 }
 @media (max-width: 575px) {
@@ -514,13 +514,66 @@ a:hover {
     font-size: 26px;
   }
 }
-.custom-modal.modal .modal-content p:not(.error-message) {
-  font-size: 18px;
+.custom-modal.modal .modal-content .message-error {
+  color: #DB2626;
+  line-height: 1;
 }
-@media (max-width: 575px) {
-  .custom-modal.modal .modal-content p:not(.error-message) {
-    font-size: 16px;
-  }
+.custom-modal.modal .modal-content .message-error .title {
+  display: block;
+  font-size: 26px;
+  font-weight: 500;
+}
+.custom-modal.modal .modal-content .message-error .text {
+  display: block;
+  font-size: 22px;
+}
+.custom-modal.modal .modal-content .message-success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  pointer-events: none;
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 2;
+}
+.custom-modal.modal .modal-content .message-success .title {
+  margin-bottom: 24px;
+  font-size: 58px;
+  font-weight: 600;
+  line-height: 1;
+}
+.custom-modal.modal .modal-content .message-success .title span {
+  color: #147AFF;
+}
+.custom-modal.modal .modal-content .message-success .text {
+  font-size: 30px;
+  line-height: 1;
+}
+.custom-modal.modal .modal-content .message-success .dp {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
 }
 .custom-modal.modal .modal-content .close-modal {
   width: 25px;
@@ -529,6 +582,7 @@ a:hover {
   position: absolute;
   top: 16px;
   right: 16px;
+  z-index: 3;
   cursor: pointer;
 }
 .custom-modal.modal .modal-content .form-control {
@@ -784,6 +838,7 @@ a:hover {
 }
 @media (max-width: 575px) {
   .hero-section {
+    min-height: calc(100vh - 76px);
     background-image: url("../src/dept.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -793,7 +848,7 @@ a:hover {
 .hero-section .background-video {
   position: absolute;
   width: 100%;
-  height: calc(100vh - 114px);
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
@@ -806,9 +861,9 @@ a:hover {
 .hero-section .main-content .title {
   font-size: 75px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1;
   max-width: 13500px;
-  margin: 120px auto 40px;
+  margin: 0 auto 100px;
 }
 @media (max-width: 1199px) {
   .hero-section .main-content .title {
@@ -821,24 +876,13 @@ a:hover {
     margin: 0 auto 40px;
   }
 }
-.hero-section .main-content .desc {
-  font-size: 30px;
-  line-height: 1.1;
-  margin: auto auto 40px;
-  max-width: 750px;
-}
-@media (max-width: 767px) {
-  .hero-section .main-content .desc {
-    font-size: 20px;
-  }
-}
 .hero-section .main-content .btn-enrolment {
   gap: 24px;
   background-color: rgba(255, 255, 255, 0.09);
-  padding: 15px 40px;
+  padding: 10px 40px;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
-  font-size: 35px;
+  font-size: 25px;
   color: #fff;
   text-decoration: none;
 }
@@ -851,13 +895,13 @@ a:hover {
 }
 .hero-section .main-content .btn-enrolment .avatar-btn {
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
 }
 @media (max-width: 1199px) {
   .hero-section .main-content .btn-enrolment .avatar-btn {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
 }
 .hero-section .main-content .btn-enrolment .avatar-btn:nth-child(2) {
@@ -900,11 +944,7 @@ a:hover {
   }
 }
 .our-approach .car-engine {
-  background-image: url(../src/car-engine.png);
   background-color: #fff;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -927,17 +967,37 @@ a:hover {
     font-size: 32px;
   }
 }
+.our-approach .car-engine img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  max-width: 95%;
+  max-height: 95%;
+}
 
 /* ---  */
 /* About Us Section */
 .about-us .seo-avatar-wrap {
-  width: 160px;
-  height: 160px;
+  width: 135px;
+  height: 135px;
 }
 @media (max-width: 575px) {
   .about-us .seo-avatar-wrap {
     width: 90px;
     height: 90px;
+  }
+}
+.about-us .badge {
+  font-size: 18px;
+  padding: 6px 12px;
+}
+@media (max-width: 575px) {
+  .about-us .badge {
+    font-size: 14px;
+    padding: 4px 12px;
   }
 }
 .about-us .seo-avatar-title {
@@ -948,6 +1008,10 @@ a:hover {
   .about-us .seo-avatar-title {
     font-size: 20px;
   }
+}
+.about-us .seo-avatar-title span {
+  font-size: 24px;
+  padding-left: 16px;
 }
 .about-us .quote-symbol {
   font-size: 32px;
@@ -982,7 +1046,7 @@ a:hover {
 }
 .products .products-item .card-preview,
 .products .products-item .card-details {
-  min-height: 350px;
+  min-height: 300px;
   padding: 35px;
 }
 @media (max-width: 575px) {
@@ -1048,8 +1112,16 @@ a:hover {
     width: 150px;
   }
 }
+@media (max-width: 575px) {
+  .products .products-item .card-preview .img-item-3 {
+    -webkit-transform: translateY(-50%) rotate(-13deg);
+        -ms-transform: translateY(-50%) rotate(-13deg);
+            transform: translateY(-50%) rotate(-13deg);
+  }
+}
 .products .products-item .card-details .description {
-  font-size: 24px;
+  font-size: 22px;
+  line-height: 1;
 }
 .products .products-item .card-details .action-link {
   text-decoration: none;
@@ -1057,7 +1129,7 @@ a:hover {
 @media (max-width: 575px) {
   .products .products-item .card-preview,
   .products .products-item .card-details {
-    min-height: 290px;
+    min-height: 200px;
   }
   .products .products-item .card-preview .category {
     font-size: 16px;
@@ -1092,11 +1164,30 @@ a:hover {
     gap: 20px;
   }
 }
+.projects .projects-cards .title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+}
+@media (max-width: 575px) {
+  .projects .projects-cards .title {
+    font-size: 26px;
+  }
+}
+.projects .projects-cards .text {
+  font-size: 22px;
+  line-height: 1;
+}
+@media (max-width: 575px) {
+  .projects .projects-cards .text {
+    font-size: 16px;
+  }
+}
 .projects .projects-cards .card-1,
 .projects .projects-cards .card-2 {
   width: 100%;
   height: auto;
-  padding-bottom: 40%;
+  padding-bottom: 35%;
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: contain;
@@ -1331,6 +1422,7 @@ a:hover {
 }
 .course-details .details-card-1 .category {
   font-size: 18px;
+  margin-bottom: 35px;
 }
 .course-details .details-card-1 .price {
   width: 25px;
@@ -1338,19 +1430,22 @@ a:hover {
 }
 .course-details .details-card-1 .description {
   font-size: 24px;
+  line-height: 1;
   width: 60%;
+  margin-bottom: 80px;
 }
 @media (max-width: 575px) {
   .course-details .details-card-1 .description {
     width: 100%;
     font-size: 18px;
+    margin-bottom: 35px;
   }
 }
 .course-details .details-card-1 .details-img {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 40%;
+  width: 45%;
 }
 @media (max-width: 575px) {
   .course-details .details-card-1 .details-img {
@@ -1376,7 +1471,7 @@ a:hover {
 .course-details .details-card-2 .details-card-grid {
   display: grid;
   gap: 25px;
-  grid-auto-rows: 150px;
+  grid-auto-rows: 125px;
   grid-template-columns: repeat(2, 1fr);
 }
 @media (max-width: 575px) {
@@ -1390,7 +1485,7 @@ a:hover {
   grid-column: 1/-1;
 }
 .course-details .details-card-2 .big-number {
-  font-size: 45px;
+  font-size: 35px;
 }
 
 /* ---  */
@@ -1398,17 +1493,18 @@ a:hover {
 .course-benefits .benefits-title {
   display: inline-block;
   padding: 20px;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 600;
   background-color: #F4F4F4;
 }
 @media (max-width: 1199px) {
   .course-benefits .benefits-title {
-    font-size: 40px;
+    font-size: 35px;
   }
 }
 @media (max-width: 575px) {
   .course-benefits .benefits-title {
+    padding: 15px;
     font-size: 24px;
   }
 }
@@ -1462,6 +1558,9 @@ a:hover {
   .course-benefits .benefits-value {
     font-size: 40px;
   }
+}
+.course-benefits .benefits-forever {
+  font-weight: 400;
 }
 
 /* ---  */
@@ -2164,6 +2263,36 @@ a:hover {
 }
 
 /* ---  */
+.dept-about-us .section-title {
+  font-size: 52px;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+@media (max-width: 1199px) {
+  .dept-about-us .section-title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .dept-about-us .section-title {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+}
+.dept-about-us .section-text {
+  font-weight: 500;
+}
+@media (max-width: 1199px) {
+  .dept-about-us .section-text {
+    font-size: 24px;
+  }
+}
+@media (max-width: 575px) {
+  .dept-about-us .section-text {
+    font-size: 18px;
+  }
+}
+
 /* Page Dept-exchange  */
 .offer .offer-grid {
   display: grid;

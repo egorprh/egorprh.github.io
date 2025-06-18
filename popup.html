@@ -27,10 +27,21 @@
                     Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности.
                 </label>
             </div>
+            <div class="message-error my-3">
+                <span class="title">Что-то пошло не так.</span>
+                <span class="text">Возможно, одно из полей заполнено с ошибкой.</span>
+            </div>
             <button type="submit" class="btn btn-primary submit-button" onclick="validateForm(this)">Записаться</button>
         </form>
         <svg class="close-modal">
             <use xlink:href="./styles/sprite.svg#close"></use>
         </svg>
+        <div class="message-success">
+            <div class="title">Данные <span class="">успешно</span> отправлены.</div>
+            <div class="text">Мы свяжемся с вами в ближайшее время.</div>
+            <svg class="dp">
+                <use xlink:href="./styles/sprite.svg#dp"></use>
+            </svg> 
+        </div>
     </div>
 </div>
