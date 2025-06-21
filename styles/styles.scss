@@ -81,13 +81,15 @@ a {
     font-size: 65px;
     font-weight: 600;
     margin-bottom: 50px;
+    letter-spacing: -0.48px;
+    line-height: 1.07;
 
     @media (max-width: 1199px) {
         font-size: 50px;
     }
 
     @media (max-width: 575px) {
-        font-size: 32px;
+        font-size: 30px;
         margin-bottom: 25px;
     }
 }
@@ -311,6 +313,7 @@ a {
         font-size: 40px;
         font-weight: 600;
         line-height: 1;
+        letter-spacing: -0.48px;
     }
 
     .card-text {
@@ -327,6 +330,7 @@ a {
 
         .card-title {
             font-size: 24px;
+            letter-spacing: -0.48px;
         }
 
         .card-text {
@@ -343,6 +347,7 @@ a {
         font-size: 26px;
         font-weight: 600;
         line-height: 1;
+        letter-spacing: -0.48px;
 
         @media (max-width: 1199px) {
             font-size: 22px;
@@ -365,11 +370,12 @@ a {
 
     .title {
         font-size: 25px;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1;
+        letter-spacing: -0.48px;
 
         @media (max-width: 575px) {
-            font-size: 22px;
+            font-size: 24px;
         }
     }
 
@@ -498,27 +504,43 @@ a {
             }
         }
 
-        // p:not(.error-message) {
-        //     font-size: 18px;
+        p,
+        label {
+            line-height: 1;
 
-        //     @media (max-width: 575px) {
-        //         font-size: 16px;
-        //     }
-        // }
+            @media (max-width: 575px) {
+                font-size: 16px;
+            }
+        }
+
+        label {
+            text-align: start;
+        }
 
         .message-error {
             color: #DB2626;
             line-height: 1;
 
+
+
             .title {
                 display: block;
                 font-size: 26px;
                 font-weight: 500;
+                letter-spacing: -0.48px;
+
+                @media (max-width: 575px) {
+                    font-size: 20px;
+                }
             }
 
             .text {
                 display: block;
                 font-size: 22px;
+
+                @media (max-width: 575px) {
+                    font-size: 16px;
+                }
             }
         }
 
@@ -543,6 +565,15 @@ a {
                 font-size: 58px;
                 font-weight: 600;
                 line-height: 1;
+                letter-spacing: -0.48px;
+
+                @media (max-width: 767px) {
+                    font-size: 40px;
+                }
+
+                @media (max-width: 575px) {
+                    font-size: 34px;
+                }
 
                 span {
                     color: #147AFF;
@@ -552,6 +583,14 @@ a {
             .text {
                 font-size: 30px;
                 line-height: 1;
+
+                @media (max-width: 767px) {
+                    font-size: 24px;
+                }
+
+                @media (max-width: 575px) {
+                    font-size: 20px;
+                }
             }
 
             .dp {
@@ -559,9 +598,27 @@ a {
                 bottom: 20px;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 40px;
-                height: 40px;
+                width: 128px;
+                height: 74px;
+
+                @media (max-width: 575px) {
+                    width: 70px;
+                    height: 50px;
+                }
             }
+        }
+
+        .message-success,
+        .message-error {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .message-success.show,
+        .message-error.show {
+            opacity: 1;
+            visibility: visible;
         }
 
         .close-modal {
@@ -576,9 +633,22 @@ a {
             cursor: pointer;
         }
 
+        .form-check-input,
         .form-control {
             background-color: #DFDFDF;
             border: none;
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:focus {
+                box-shadow: 0 0 0 1000px #DFDFDF inset;
+                -webkit-text-fill-color: #000;
+                caret-color: auto;
+            }
+
+            &.input-error-bg {
+                color: #fff;
+                background-color: #FFB5B5;
+            }
         }
 
         .btn {
@@ -622,30 +692,6 @@ a {
         background-position: center;
     }
 
-    .input-wrapper {
-        .error-message {
-            text-align: center;
-            font-size: 14px;
-            width: 90%;
-            color: red;
-            padding: 5px 15px;
-            background-color: #DFDFDF;
-            border: 1px solid red;
-            border-radius: 50px;
-
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            transform: translateX(-50%);
-
-            @media (max-width: 575px) {
-                font-size: 10px;
-                padding: 2px 10px;
-                bottom: -6px;
-            }
-        }
-    }
-
     &.popup {
         .error-message {
             background-color: #f9f7f7;
@@ -681,33 +727,6 @@ a {
 
         to {
             transform: rotate(360deg);
-        }
-    }
-
-    .notification {
-        padding: 50px;
-        text-align: center;
-        background-color: #fff;
-        font-size: 40px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-
-        @media (max-width: 575px) {
-            padding: 30px;
-            font-size: 30px;
-        }
-
-        &.success {
-            border: 4px solid #3eb63e;
-            color: #3eb63e;
-        }
-
-        &.danger {
-            border: 4px solid red;
-            color: red;
         }
     }
 }
@@ -770,6 +789,7 @@ a {
     .title {
         font-size: 175px;
         font-weight: 600;
+        letter-spacing: -0.48px;
 
         @media (max-width: 1199px) {
             font-size: 100px;
@@ -781,12 +801,14 @@ a {
 
         @media (max-width: 575px) {
             font-size: 65px;
+            text-align: center;
         }
     }
 
     .title-dep-ex {
         font-size: 120px;
         font-weight: 600;
+        letter-spacing: -0.48px;
 
         @media (max-width: 1199px) {
             font-size: 70px;
@@ -802,6 +824,10 @@ a {
 
         @media (max-width: 767px) {
             font-size: 28px;
+        }
+
+        @media (max-width: 575px) {
+            font-size: 24px;
         }
     }
 
@@ -861,6 +887,7 @@ a {
             font-size: 75px;
             font-weight: 700;
             line-height: 1;
+            letter-spacing: -0.48px;
             max-width: 13500px;
             margin: 0 auto 100px;
 
@@ -952,15 +979,20 @@ a {
         align-items: center;
         justify-content: center;
 
+        @media (max-width: 575px) {
+            height: 150px;
+        }
+
         p {
             text-align: center;
-            font-size: 60px;
+            font-size: 65px;
             font-weight: 600;
+            line-height: 1;
             color: #C7C7C7;
             max-width: 500px;
 
             @media (max-width: 575px) {
-                font-size: 32px;
+                font-size: 40px;
             }
         }
 
@@ -1005,6 +1037,7 @@ a {
     .seo-avatar-title {
         font-size: 28px;
         font-weight: 600;
+        letter-spacing: -0.48px;
 
         @media (max-width: 575px) {
             font-size: 20px;
@@ -1012,7 +1045,11 @@ a {
 
         span {
             font-size: 24px;
+            font-weight: 400;
             padding-left: 16px;
+            @media (max-width: 575px) {
+                font-size: 16px;
+            }
         }
     }
 
@@ -1075,8 +1112,9 @@ a {
 
             .title {
                 font-size: 70px;
-                font-weight: 700;
+                font-weight: 600;
                 line-height: 1;
+                letter-spacing: -0.48px;
 
                 &.title-card-1 {
                     font-size: 42px;
@@ -1141,7 +1179,7 @@ a {
 
             .card-preview,
             .card-details {
-                min-height: 200px;
+                min-height: 300px;
             }
 
             .card-preview {
@@ -1150,13 +1188,13 @@ a {
                 }
 
                 .title {
-                    font-size: 35px;
+                    font-size: 40px;
                 }
             }
 
             .card-details {
                 .description {
-                    font-size: 16px;
+                    font-size: 20px;
                 }
 
                 .action-link {
@@ -1192,16 +1230,19 @@ a {
             font-size: 40px;
             font-weight: 600;
             line-height: 1;
+            letter-spacing: -0.48px;
+
             @media (max-width: 575px) {
-                font-size: 26px; 
+                font-size: 26px;
             }
         }
 
         .text {
             font-size: 22px;
             line-height: 1;
+
             @media (max-width: 575px) {
-                font-size: 16px; 
+                font-size: 16px;
             }
         }
 
@@ -1245,20 +1286,29 @@ a {
 
     .carousel-item {
         .avatar {
-            width: 70px;
-            height: 70px;
-
+            width: 45px;
+            height: 45px;
+            @media (max-width: 575px) {
+                width: 35px;
+                height: 35px;
+            }
         }
 
         .avatar-name {
             font-size: 24px;
+            @media (max-width: 575px) {
+                font-size: 20px;
+            }
         }
 
         .text {
-            font-size: 32px;
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 1;
 
             @media (max-width: 1199px) {
-                font-size: 24px;
+                font-size: 20px;
+
             }
         }
     }
@@ -1268,6 +1318,12 @@ a {
 
 /* Contact Form Section */
 .contact-area {
+    &.page-start {
+        .section-title {
+            letter-spacing: -0.48px;
+        }
+    }
+
     .contact-area-wrap {
         position: relative;
         background-color: #000;
@@ -1277,6 +1333,7 @@ a {
             font-size: 48px;
             font-weight: 600;
             margin-bottom: 50px;
+            letter-spacing: -0.48px;
         }
 
         @media (max-width: 575px) {
@@ -1285,17 +1342,33 @@ a {
             .title {
                 font-size: 32px;
                 margin-bottom: 25px;
+                letter-spacing: -0.48px;
             }
         }
     }
 
+    .form-check-input,
     .form-control {
         background-color: #575757;
         border: none;
-    }
 
-    .form-control::placeholder {
-        color: #fff;
+        &::placeholder {
+            color: #fff;
+        }
+
+        &.input-error-bg {
+            background-color: #6B3E3E;
+            color: #fff;
+            -webkit-text-fill-color: #fff !important;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:focus {
+            box-shadow: 0 0 0 1000px #575757 inset !important;
+            -webkit-text-fill-color: #fff !important;
+            caret-color: auto;
+        }
+
     }
 
     .form-check-input {
@@ -1309,11 +1382,11 @@ a {
     }
 
     .btn {
-        margin-top: 50px;
+        padding: 10px 32px;
 
         @media (max-width: 575px) {
-            margin-top: 25px;
             width: 100%;
+            padding: 6px 25px;
         }
 
         .chevron-right {
@@ -1321,6 +1394,74 @@ a {
             height: 18px;
             fill: #fff;
             margin-left: 10px;
+        }
+    }
+
+    .message-wrap {
+        .message-success {
+            color: #fff;
+            font-size: 22px;
+
+            @media (max-width: 575px) {
+                font-size: 15px;
+                text-align: center;
+            }
+
+            span {
+                color: #147AFF;
+            }
+        }
+
+        .message-error {
+            text-align: start;
+            line-height: 1;
+
+            @media (max-width: 991px) {
+                min-height: 30px;
+                text-align: center;
+            }
+
+            .title,
+            .text {
+                color: #fff;
+
+                span {
+                    color: #DB2626;
+                }
+            }
+
+            .title {
+                margin: 0;
+                font-size: 22px;
+                letter-spacing: -0.48px;
+
+                @media (max-width: 575px) {
+                    font-size: 15px;
+                }
+            }
+
+            .text {
+                font-size: 16px;
+
+                @media (max-width: 575px) {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .message-success,
+        .message-error {
+            opacity: 0;
+            height: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .message-success.show,
+        .message-error.show {
+            opacity: 1;
+            height: auto;
+            visibility: visible;
         }
     }
 
@@ -1370,8 +1511,6 @@ a {
         }
     }
 
-
-
     .social-item {
         width: 50px;
         height: 50px;
@@ -1396,7 +1535,7 @@ a {
             gap: 20px;
 
             .client-item img {
-                max-height: 55px;
+                max-height: 40px;
             }
         }
     }
@@ -1446,10 +1585,17 @@ a {
             font-size: 40px;
             font-weight: 600;
             line-height: 1;
+            letter-spacing: -0.48px;
 
             @media (max-width: 575px) {
                 font-size: 30px;
             }
+        }
+
+        .details-free {
+            @media (max-width: 575px) {
+                font-size: 16px;
+            } 
         }
 
         .category {
@@ -1460,6 +1606,10 @@ a {
         .price {
             width: 25px;
             height: 25px;
+            @media (max-width: 575px) {
+                width: 18px;
+                height: 18px;
+            }
         }
 
         .description {
@@ -1536,6 +1686,7 @@ a {
         padding: 20px;
         font-size: 45px;
         font-weight: 600;
+        letter-spacing: -0.48px;
         background-color: #F4F4F4;
 
         @media (max-width: 1199px) {
@@ -1544,6 +1695,21 @@ a {
 
         @media (max-width: 575px) {
             padding: 15px;
+            font-size: 24px;
+        }
+    }
+
+    .section-title {
+        line-height: 1;
+        letter-spacing: -0.48px;
+    }
+
+    .section-text {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 1;
+
+        @media (max-width: 575px) {
             font-size: 24px;
         }
     }
@@ -1597,6 +1763,9 @@ a {
 
     .benefits-forever {
         font-weight: 400;
+        @media (max-width: 575px) {
+            font-size: 22px;
+        }
     }
 }
 
@@ -1607,7 +1776,7 @@ a {
     .audience-grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        grid-auto-rows: 180px;
+        grid-auto-rows: 170px;
         gap: 25px;
         grid-template-areas:
             "item-1 item-1 item-2 item-2 item-3"
@@ -1680,6 +1849,16 @@ a {
                 "item-4"
                 "item-5"
                 "item-6";
+        }
+
+        .card-body-mini {
+            .title {
+                font-size: 28px;
+
+                @media (max-width: 575px) {
+                    font-size: 22px;
+                }
+            }
         }
     }
 
@@ -1769,6 +1948,14 @@ a {
             background-size: contain;
             background-position: bottom right;
         }
+
+        .card-body-mini .title {
+            font-size: 28px;
+
+            @media (max-width: 575px) {
+                font-size: 26px;
+            }
+        }
     }
 }
 
@@ -1811,6 +1998,20 @@ a {
         .title {
             font-size: 45px;
             font-weight: 600;
+            letter-spacing: -0.48px;
+        }
+
+        .term-info {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .period-tag {
+            font-size: 20px;
+            font-weight: 400;
+            @media (max-width: 575px) {
+                font-size: 16px;
+            } 
         }
 
         .text {
@@ -1818,8 +2019,8 @@ a {
         }
 
         .price {
-            width: 30px;
-            height: 30px;
+            width: 27px;
+            height: 27px;
         }
     }
 }
@@ -1893,17 +2094,26 @@ a {
     .calendar {
         width: 60px;
         height: 60px;
+        @media (max-width: 575px) {
+            width: 40px;
+            height: 40px;
+        }
     }
 
-    .description {
-        font-size: 28px;
+    .description-bold {
+        font-size: 36px;
+        font-weight: 500;
 
         @media (max-width: 575px) {
-            font-size: 20px;
+            font-size: 24px;
         }
+    }
 
-        &.bold {
-            font-weight: 500;
+    .description-light {
+        font-size: 24px;
+
+        @media (max-width: 575px) {
+            font-size: 18px;
         }
     }
 }
@@ -1999,6 +2209,7 @@ a {
             .program-title {
                 font-size: 32px;
                 font-weight: 600;
+                letter-spacing: -0.48px;
 
                 @media (max-width: 575px) {
                     font-size: 24px;
@@ -2091,6 +2302,22 @@ a {
             background-image: none;
         }
     }
+
+    .card-body-mini .title {
+        font-size: 30px;
+
+        @media (max-width: 575px) {
+            font-size: 25px;
+        }
+
+        .title-big {
+            font-size: 40px;
+
+            @media (max-width: 575px) {
+                font-size: 35px;
+            }
+        }
+    }
 }
 
 /* ---  */
@@ -2118,6 +2345,7 @@ a {
         .title {
             font-size: 50px;
             font-weight: 600;
+            letter-spacing: -0.48px;
 
             @media (max-width: 575px) {
                 font-size: 30px;
@@ -2135,20 +2363,16 @@ a {
 
         .tagline {
             color: #484848;
-            font-size: 25px;
+            font-size: 20px;
         }
 
         .btn-grid {
             display: grid;
-            grid-template-columns: repeat(4, 170px);
+            grid-template-columns: repeat(2, 170px);
             gap: 16px 8px;
 
             @media (max-width: 991px) {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            @media (max-width: 575px) {
-                // grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -2194,16 +2418,17 @@ a {
         width: 100%;
 
         .card-body {
-            height: 370px;
+            height: 300px;
 
             @media (max-width: 991px) {
-                height: 300px;
+                height: 230px;
             }
         }
 
         .title {
             padding: 7px 30px;
             font-size: 20px;
+            letter-spacing: -0.48px;
         }
 
         .pricing {
@@ -2248,6 +2473,10 @@ a {
         padding: 8px 50px;
         background-color: #fff;
         border: 2px solid #000;
+
+        @media (max-width: 575px) {
+            padding: 2px 50px;
+        }
     }
 }
 
@@ -2272,6 +2501,7 @@ a {
     .title {
         font-size: 34px;
         font-weight: 600;
+        letter-spacing: -0.48px;
 
         @media (max-width: 1199px) {
             font-size: 24px;
@@ -2336,6 +2566,7 @@ a {
         }
     }
 }
+
 /* ---  */
 
 .dept-about-us {
@@ -2343,6 +2574,7 @@ a {
         font-size: 52px;
         margin-bottom: 24px;
         line-height: 1;
+        letter-spacing: -0.48px;
 
         @media (max-width: 1199px) {
             font-size: 40px;
@@ -2442,10 +2674,7 @@ a {
 
         .card-title {
             line-height: 1;
-
-            span {
-                color: #DE51A3;
-            }
+            letter-spacing: -0.48px;
         }
 
         .btn {

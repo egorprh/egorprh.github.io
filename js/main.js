@@ -1,55 +1,33 @@
-// Загрузка попапа в дом, открытие попапа
-document.addEventListener('DOMContentLoaded', () => setupPopupHandlers());
+// Модалка
+const modal = document.querySelector('#modal');
+const hiddenInput = modal.querySelector('.contact-form input[name="form_source"]');
+const closeButton = modal.querySelector('.close-modal');
+const openButtons = document.querySelectorAll('.open-modal');
 
-function setupPopupHandlers() {
-    const openButtons = document.querySelectorAll('.open-modal');
-
-    openButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const formSource = button.getAttribute('data-form-source'); // Берем значение data-атрибута
-
-            fetch(window.location.origin + '/popup.html')
-                .then(response => response.text())
-                .then(html => {
-                    const modalContainer = document.createElement('div');
-                    modalContainer.innerHTML = html;
-                    document.body.appendChild(modalContainer);
-
-                    // Ищем форму в попапе и записываем значение в скрытый input
-                    const popupForm = modalContainer.querySelector('.contact-form'); 
-                    const hiddenInput = modalContainer.querySelector('.contact-form input[name="form_source"]');
-                    if (hiddenInput) hiddenInput.value = formSource; 
-
-                    initModal(modalContainer);
-                })
-                .catch(error => console.error('Ошибка загрузки попапа:', error));
-        });
+openButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        hiddenInput.value = button.getAttribute('data-form-source');
+        modal.classList.add('show');
     });
-}
+});
+
+closeButton.addEventListener('click', () => {
+    modal.classList.remove('show');
+});
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('show');
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+    }
+});
 
 
-function initModal(modalContainer) {
-    const modal = modalContainer.querySelector('#modal');
-    const closeButton = modalContainer.querySelector('.close-modal');
-
-    modal.classList.add('show');
-
-    closeButton.addEventListener('click', () => {
-        modalContainer.remove();
-    });
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modalContainer.remove();
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('show')) {
-            modalContainer.remove();
-        }
-    });
-}
 
 // Карусель, получаем карточки и рендерим их
 async function fetchJsonFiles() {
@@ -142,37 +120,44 @@ function validateForm(button) {
         // Валидация Ф.И.О
         const nameInput = form.querySelector('input[name="name"]');
         const words = nameInput.value.trim().split(/\s+/);
-
         if (words.length < 2 || words.some(word => word.length < 2)) {
-            showError(nameInput, words.length < 2 
-                ? "Поле должно содержать фамилию и имя" 
-                : "Фамилия и имя должны содержать не менее 2-х букв");
+            markInvalidInput(nameInput);
             isValid = false;
         }
 
         // Валидация телефона
         const phoneInput = form.querySelector('input[name="phone"]');
-        if (!/^\+\d{10,}$/.test(phoneInput.value)) {
-            showError(phoneInput, "Телефон начинается с \"+\" и имеет не менее 10 цифр");
+
+        let rawValue = phoneInput.value.replace(/\D/g, '');
+
+        if (!rawValue.startsWith('+' )) {
+            rawValue = '+' + rawValue;
+        }
+
+        phoneInput.value = rawValue;
+
+        if (!/^\+\d{10,}$/.test(rawValue)) {
+            markInvalidInput(phoneInput);
             isValid = false;
         }
+
 
         // Валидация Telegram
         const telegramInput = form.querySelector('input[name="telegram"]');
         if (/[А-Яа-яЁё]/.test(telegramInput.value)) {
-            showError(telegramInput, "Поле не может содержать русские буквы");
+            markInvalidInput(telegramInput);
             isValid = false;
         }
 
         // Валидация чекбокса
         const consentCheckbox = form.querySelector("input[type='checkbox']");
         if (!consentCheckbox.checked) {
-            consentCheckbox.classList.add("error-border");
+            consentCheckbox.classList.add("input-error-bg");
             isValid = false;
         } 
 
         consentCheckbox.addEventListener("change", function (event) {
-            event.target.classList.remove("error-border");
+            event.target.classList.remove("input-error-bg");
         });
 
         // Если есть ошибки, отменяем отправку
@@ -187,23 +172,18 @@ function validateForm(button) {
         const jsonData = JSON.stringify(Object.fromEntries(formData.entries()));
 
         // Отправка данных
-        fetch("URL_ОТ_ТИМЛИДА", { // TODO нужен правильный урл
+        fetch("http://79.137.192.124:9348/send-message/", { // TODO нужен правильный урл
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: jsonData
         })
         .then(response => response.json())
         .then(data => {
-            console.log("Ответ сервера:", data);
-
-            showNotification("success", form);
-
+            showMessage(form, "success");
             form.reset();
         })
         .catch(error => {
-            console.error("Ошибка отправки:", error);
-
-            showNotification("danger", form);
+            showMessage(form, "error");
         })
         .finally(() => {
             form.removeChild(loader);
@@ -212,36 +192,27 @@ function validateForm(button) {
     }, { once: true });
 }
 
-function showError(input, message) {
-    const errorElement = input.parentElement.querySelector(".error-message");
-    errorElement.textContent = message;
-    errorElement.classList.remove("d-none");
-    input.classList.add("error-border");
+function markInvalidInput(input, message) {
+    input.classList.add('input-error-bg');
+    input.setAttribute('data-error-message', message);
 
-    setTimeout(() => {
-        hideError(input);
-    }, 3000);
+    const clearOnInput = () => {
+        input.classList.remove('input-error-bg');
+        input.removeAttribute('data-error-message');
+        input.removeEventListener('input', clearOnInput);
+    };
+
+    input.addEventListener('focus', clearOnInput, { once: true });
 }
 
-function hideError(input) {
-    const errorElement = input.parentElement.querySelector(".error-message");
-    errorElement.classList.add("d-none");
-    input.classList.remove("error-border");
-}
-
-function showNotification(type, form) {
-    // Создаём `div.notification`
-    const notification = document.createElement("div");
-    notification.className = `notification ${type}`;
-    notification.textContent = type === "success" 
-        ? "Заявка успешно отправлена" 
-        : "Произошла ошибка, попробуйте еще раз";
-
-    form.appendChild(notification);
-
+function showMessage(form, type) {
+    const message = form.querySelector(`.message-${type}`);
+  
+    message.classList.add('show');
+  
     setTimeout(() => {
-        notification.remove();
-    }, 2000);
+      message.classList.remove('show');
+    }, 2500);
 }
 
 
@@ -280,69 +251,3 @@ function renderButtons(data) {
 if (document.getElementById("month-buttons")) {
     fetchMonthButtons();
 }
-
-
-
-
-
-
-
-// // ====== 2. Обработка форм ======
-
-// /**
-//  * Функция универсальной обработки формы
-//  * @param {HTMLFormElement} form - форма, с которой работаем
-//  * @param {string} endpoint - URL, куда отправляем данные
-//  */
-// function handleFormSubmit(form, endpoint) {
-//     form.addEventListener('submit', function (e) {
-//         e.preventDefault();
-
-//         const formData = new FormData(form);
-//         const data = Object.fromEntries(formData);
-
-//         // Можно заменить на fetch, если нужно POST-запросом
-//         sendFormData(data, endpoint);
-//     });
-// }
-
-// /**
-//  * Отправка данных в указанный сервис
-//  * @param {Object} data - объект с данными формы
-//  * @param {string} endpoint - URL API или Formspree
-//  */
-// function sendFormData(data, endpoint) {
-//     // Пример с fetch и POST-запросом:
-//     fetch(endpoint, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(data)
-//     })
-//     .then(response => {
-//         if (response.ok) {
-//             alert('Спасибо! Мы получили вашу заявку.');
-//             form.reset(); // Очистить форму
-//             closeModal(); // Закрыть попап (если это форма из модального окна)
-//         } else {
-//             alert('Ошибка отправки. Попробуйте позже.');
-//         }
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//         alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
-//     });
-// }
-
-// // ====== 3. Подключение форм ======
-// // Форма в попапе
-// const modalForm = document.querySelector('#modal form');
-// if (modalForm) {
-//     handleFormSubmit(modalForm, 'https://formspree.io/f/your-form-id '); // <-- замени на свой ID
-// }
-
-// // Формы на странице (например, контактная форма)
-// document.querySelectorAll('form.contact-form').forEach(form => {
-//     handleFormSubmit(form, 'https://formspree.io/f/your-form-id '); // <-- замени на свой ID
-// });

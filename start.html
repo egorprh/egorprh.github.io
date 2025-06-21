@@ -76,12 +76,12 @@
                         <div class="card bg-light h-100">
                             <div class="card-body d-flex flex-column align-items-start">
                                 <div class="d-flex flex-column-reverse flex-sm-row justify-content-between align-items-start gap-1 w-100">
-                                    <h2 class="title">Старт в торговле <br> криптовалютой</h2>
+                                    <h2 class="title mt-2 mt-sm-0">Старт в торговле <br> криптовалютой</h2>
                                     <div class="d-flex align-items-center gap-1 pt-2">
                                         <svg class="price">
                                             <use xlink:href="./styles/sprite.svg#price"></use>
                                         </svg>
-                                        <div>Бесплатно</div>
+                                        <div class="details-free">Бесплатно</div>
                                     </div>                                    
                                 </div>
                                 <p class="category text-grey-light">На базе обучающей платформы</p>
@@ -222,7 +222,7 @@
         </section>
 
         <!-- Registration Form Section -->
-        <section class="section contact-area">
+        <section class="section contact-area page-start">
             <div class="custom-container">
                 <h2 class="section-title mb-4">Получите <span style="color: #147AFF;">бесплатный</span> доступ:</h2>
                 <div class="contact-area-wrap">
@@ -230,31 +230,31 @@
                         <div class="">
                             <p class="title text-white">Введите свои данные</p>
                             <form class="contact-form">
-                                <div class="input-wrapper position-relative">
-                                    <p class="error-message d-none">Фамилия и имя должны содержать не бенее 2-х букв</p>
-                                    <input type="text" class="form-control text-white" name="name" placeholder="Ф.И.О" autocomplete="name" required>                                    
-                                </div>                                
-                                <div class="input-wrapper position-relative">
-                                    <p class="error-message d-none">Телефон начинается с "+" и имеет не менее 10 цифр</p>
-                                    <input type="tel" class="form-control text-white mt-3" name="phone" placeholder="Ваш номер телефона" autocomplete="tel" required>
-                                </div>
-                                <div class="input-wrapper position-relative">
-                                    <p class="error-message d-none">Поле не может содержать русские буквы</p>
-                                    <input type="text" class="form-control text-white mt-3" name="telegram" placeholder="Telegram" required>
-                                </div>
-                                <input type="hidden" name="form_source" value="start__form">
-                                <div class="form-check d-flex align-items-start gap-2 mt-4">
+                                <input type="text" class="form-control text-white" name="name" placeholder="Ф.И.О" autocomplete="off" required>                                    
+                                <input type="tel" class="form-control text-white mt-3" name="phone" placeholder="Ваш номер телефона" autocomplete="off" required>
+                                <input type="text" class="form-control text-white mt-3" name="telegram" placeholder="Telegram" required>
+                                <input type="hidden" name="form_source" value="index__form">                              
+                                <div class="form-check d-flex align-items-start gap-2 mt-4 mb-4 mb-sm-5">
                                     <input class="form-check-input flex-shrink-0 " type="checkbox" id="consentCheckbox">
                                     <label class="form-check-label text-white" for="consentCheckbox">
                                         Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности.
                                     </label>
                                 </div>
-                                <button type="submit" class="btn btn-primary" onclick="validateForm(this)">
-                                    Оставить заявку
-                                    <svg class="chevron-right">
-                                        <use xlink:href="./styles/sprite.svg#chevron-right"></use>
-                                    </svg>
-                                </button>
+                                <div class="d-flex flex-column flex-lg-row align-items-center gap-1 gap-lg-3">
+                                    <button type="submit" class="btn btn-primary text-nowrap" onclick="validateForm(this)">
+                                        Оставить заявку
+                                        <svg class="chevron-right">
+                                            <use xlink:href="./styles/sprite.svg#chevron-right"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="message-wrap ">
+                                        <div class="message-success">Данные <span>успешно</span> отправлены</div>
+                                        <div class="message-error">
+                                            <div class="title">Что-то <span>пошло не так.</span></div>
+                                            <div class="text">Возможно, одно из полей заполнено с <span>ошибкой</span></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                         <div class="contact-area-logo-wrap">
@@ -327,6 +327,45 @@
             </div>
         </footer>
     </main>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal custom-modal">
+        <div class="modal-content">
+            <svg class="dp">
+                <use xlink:href="./styles/sprite.svg#dp"></use>
+            </svg>        
+            <h2>Введите свои данные</h2>
+            <p>Это позволит нам связаться с вами для передачи дополнительной информации и оказания поддержки.</p>
+            <!-- Форма внутри попапа -->
+            <form class="contact-form popup">
+                <input class="form-control mb-2" type="text" name="name" placeholder="Ф.И.О" autocomplete="off" required>
+                <input class="form-control mb-2" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="off" required>
+                <input class="form-control mb-4" type="text" name="telegram" placeholder="Telegram" required>
+                <input type="hidden" name="form_source">
+                <div class="form-check d-flex align-items-start gap-2 mt-4">
+                    <input class="form-check-input flex-shrink-0 " type="checkbox" id="consentCheckboxModal">
+                    <label class="form-check-label mt-1" for="consentCheckboxModal">
+                        Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности.
+                    </label>
+                </div>
+                <div class="message-error my-3">
+                    <span class="title">Что-то пошло не так.</span>
+                    <span class="text">Возможно, одно из полей заполнено с ошибкой.</span>
+                </div>
+                <button type="submit" class="btn btn-primary submit-button" onclick="validateForm(this)">Записаться</button>
+            </form>
+            <svg class="close-modal">
+                <use xlink:href="./styles/sprite.svg#close"></use>
+            </svg>
+            <div class="message-success p-3 p-sm-4">
+                <div class="title mb-3 mb-sm-5">Данные <span class="">успешно</span> отправлены.</div>
+                <div class="text">Мы свяжемся с вами в ближайшее время.</div>
+                <svg class="dp">
+                    <use xlink:href="./styles/sprite.svg#dp"></use>
+                </svg> 
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
