@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  deptsite:
+    build: .
+    ports:
+      - "9348:8000"  # Пробрасываем порт 8000 контейнера на 9348 хоста
+    env_file:
+      - .env  # Используем переменные из .env файла
+    restart: always
+
+# Для продакшена можно добавить:
+#    environment:
+#      - PORT=8000
+#    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
