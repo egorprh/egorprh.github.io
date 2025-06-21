@@ -172,7 +172,7 @@ function validateForm(button) {
         const jsonData = JSON.stringify(Object.fromEntries(formData.entries()));
 
         // Отправка данных
-        fetch("http://79.137.192.124:9348/send-application/", { // TODO нужен правильный урл
+        fetch("https://79.137.192.124:9348/send-application/", { // TODO нужен правильный урл
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
