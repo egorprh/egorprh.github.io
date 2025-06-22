@@ -305,6 +305,11 @@ a:hover {
   border: 2px solid red !important;
 }
 
+.tooltip {
+  --bs-tooltip-bg: #fff;
+  --bs-tooltip-color: #000;
+}
+
 /* Card Styles */
 .card {
   border: none;
@@ -478,7 +483,7 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 9999;
+  z-index: 2;
 }
 .custom-modal.modal.show {
   display: -webkit-box;

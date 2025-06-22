@@ -27,37 +27,21 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
-
 // Карусель, получаем карточки и рендерим их
 async function fetchJsonFiles() {
-    //TODO Грузить только нужный файл из дата атрибута, а не каждый раз все
-    const files = {
-        dataIndex: "index.json",
-        dataSpace: "d-space.json",
-        dataDept: "exchange.json",
-        dataClosed: "d-closed.json"
-    };
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
 
-    const dataSets = {};
+    const type = carousel.getAttribute('data-type');
 
-    for (const key in files) {
-        try {
-            const response = await fetch(window.location.origin + `/src/reviews/${files[key]}`);
-            if (!response.ok) throw new Error(`Ошибка ${response.status}`);
-            const data = await response.json();
-            dataSets[key] = data; // Записываем данные
-        } catch (error) {
-            console.error(`Ошибка загрузки ${files[key]}:`, error);
-        }
+    try {
+        const response = await fetch(`${window.location.origin}/src/reviews/${type}.json`);
+        const data = await response.json();
+        populateCarousels({ [type]: data });
+        new bootstrap.Carousel(carousel);
+    } catch (error) {
+        console.error(`Ошибка загрузки ${type}.json:`, error);
     }
-
-    populateCarousels(dataSets);
-    
-    // Инициализируем все карусели на странице
-    document.querySelectorAll('.carousel').forEach(carouselElement => {
-        new bootstrap.Carousel(carouselElement);
-    });
 }
 
 function populateCarousels(dataSets) {
@@ -99,8 +83,7 @@ function populateCarousels(dataSets) {
 
 fetchJsonFiles(); // Запускаем загрузку, и после неё вызываем populateCarousels()
 
-
-
+// Валидация формы, отправка данных
 function validateForm(button) {
     const form = button.closest("form");
 
@@ -119,11 +102,11 @@ function validateForm(button) {
 
         // Валидация Ф.И.О
         const nameInput = form.querySelector('input[name="name"]');
-        const words = nameInput.value.trim().split(/\s+/);
-        if (words.length < 2 || words.some(word => word.length < 2)) {
-            markInvalidInput(nameInput);
+        if (nameInput.value.trim().length < 2) {
+            markInvalidInput(nameInput, 'Имя должно содержать не менее 2-х букв');
             isValid = false;
         }
+        
 
         // Валидация телефона
         const phoneInput = form.querySelector('input[name="phone"]');
@@ -136,18 +119,18 @@ function validateForm(button) {
 
         phoneInput.value = rawValue;
 
-        if (!/^\+\d{10,}$/.test(rawValue)) {
-            markInvalidInput(phoneInput);
+        if (!/^\+\d{10,15}$/.test(rawValue)) {
+            markInvalidInput(phoneInput, 'Введите корректный номер телефона');
             isValid = false;
-        }
-
+        }        
 
         // Валидация Telegram
         const telegramInput = form.querySelector('input[name="telegram"]');
-        if (/[А-Яа-яЁё]/.test(telegramInput.value)) {
-            markInvalidInput(telegramInput);
+        if (/[^\x00-\x7F]/.test(telegramInput.value)) {
+            markInvalidInput(telegramInput, 'Введите корректный никнейм');
             isValid = false;
         }
+        
 
         // Валидация чекбокса
         const consentCheckbox = form.querySelector("input[type='checkbox']");
@@ -197,15 +180,30 @@ function validateForm(button) {
 
 function markInvalidInput(input, message) {
     input.classList.add('input-error-bg');
-    input.setAttribute('data-error-message', message);
+    input.setAttribute('title', message);
+    input.setAttribute('data-bs-toggle', 'tooltip');
+    input.setAttribute('data-bs-placement', 'top');
 
-    const clearOnInput = () => {
+    bootstrap.Tooltip.getInstance(input)?.dispose();
+
+    const tooltip = new bootstrap.Tooltip(input);
+    tooltip.show();
+
+    const autoDispose = setTimeout(() => {
+        bootstrap.Tooltip.getInstance(input)?.dispose();
+    }, 2000);
+
+    const clear = () => {
+        clearTimeout(autoDispose);
         input.classList.remove('input-error-bg');
-        input.removeAttribute('data-error-message');
-        input.removeEventListener('input', clearOnInput);
+        input.removeAttribute('title');
+        input.removeAttribute('data-bs-toggle');
+        input.removeAttribute('data-bs-placement');
+        bootstrap.Tooltip.getInstance(input)?.dispose();
+        input.removeEventListener('input', clear);
     };
 
-    input.addEventListener('focus', clearOnInput, { once: true });
+    input.addEventListener('input', clear, { once: true });
 }
 
 function showMessage(form, type) {
@@ -221,28 +219,21 @@ function showMessage(form, type) {
 
 // Торговые журналы
 async function fetchMonthButtons() {
+    const buttonContainer = document.getElementById("month-buttons");
+    if (!buttonContainer) return;
+
     try {
         const response = await fetch("src/reviews/trade-magazines.json");
-        if (!response.ok) throw new Error(`Ошибка ${response.status}`);
         const data = await response.json();
-        renderButtons(data);
+        renderButtons(data, buttonContainer);
     } catch (error) {
-        console.error("Ошибка загрузки monthButtons.json:", error);
+        console.error("Ошибка загрузки trade-magazines.json:", error);
     }
 }
 
-function renderButtons(data) {
-    const buttonContainer = document.getElementById("month-buttons");
-    
-    if (!buttonContainer) {
-        // console.error('Элемент с id "month-buttons" не найден в DOM');
-        return;
-    }
-
-    // Сортируем по id и берем последние 4 элемента
+function renderButtons(data, buttonContainer) {
     const sortedData = [...data].sort((a, b) => a.id - b.id).slice(-4);
-    
-    // Собираем все кнопки в одну строку
+
     const buttonsHTML = sortedData.map(item => 
         `<a href="${item.url}" target="_blank" class="btn text-white">${item.name}</a>`
     ).join('');
@@ -250,7 +241,4 @@ function renderButtons(data) {
     buttonContainer.innerHTML = buttonsHTML;
 }
 
-// Загружаем JSON **только если есть блок `#month-buttons`**
-if (document.getElementById("month-buttons")) {
-    fetchMonthButtons();
-}
+fetchMonthButtons();
