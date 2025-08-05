@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/deptspacetrade/static/css/main.4823070a.css",
-    "main.js": "/deptspacetrade/static/js/main.87d048a8.js",
+    "main.css": "/deptspacetrade/static/css/main.93d81fee.css",
+    "main.js": "/deptspacetrade/static/js/main.60838515.js",
     "static/media/materials.svg": "/deptspacetrade/static/media/materials.b1fefc2308bf47fc4561be3ca773d45b.svg",
+    "static/media/graph.svg": "/deptspacetrade/static/media/graph.fc0bd625eed5e3385cd7c6a9b784edde.svg",
     "static/media/maincourse.svg": "/deptspacetrade/static/media/maincourse.384f4ca8853c21fa8f06b92641177d23.svg",
     "static/media/films.svg": "/deptspacetrade/static/media/films.299cb47f08735e0923bc0609ca590fa0.svg",
     "static/media/start.svg": "/deptspacetrade/static/media/start.8ba9e0699a473a5b00f367c968835936.svg",
@@ -43,11 +44,11 @@
     "static/media/block.svg": "/deptspacetrade/static/media/block.9753d013b8f9bc91967bea45008ece76.svg",
     "static/media/star-fill.svg": "/deptspacetrade/static/media/star-fill.b7ec3bfabc3a5d703fb77ec9eed5182b.svg",
     "index.html": "/deptspacetrade/index.html",
-    "main.4823070a.css.map": "/deptspacetrade/static/css/main.4823070a.css.map",
-    "main.87d048a8.js.map": "/deptspacetrade/static/js/main.87d048a8.js.map"
+    "main.93d81fee.css.map": "/deptspacetrade/static/css/main.93d81fee.css.map",
+    "main.60838515.js.map": "/deptspacetrade/static/js/main.60838515.js.map"
   },
   "entrypoints": [
-    "static/css/main.4823070a.css",
-    "static/js/main.87d048a8.js"
+    "static/css/main.93d81fee.css",
+    "static/js/main.60838515.js"
   ]
 }
