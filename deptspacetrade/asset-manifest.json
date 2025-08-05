@@ -1,33 +1,15 @@
 {
   "files": {
-    "main.css": "/deptspacetrade/static/css/main.7e8ea33b.css",
-    "main.js": "/deptspacetrade/static/js/main.60838515.js",
-    "static/media/materials.svg": "/deptspacetrade/static/media/materials.b1fefc2308bf47fc4561be3ca773d45b.svg",
-    "static/media/graph.svg": "/deptspacetrade/static/media/graph.fc0bd625eed5e3385cd7c6a9b784edde.svg",
-    "static/media/maincourse.svg": "/deptspacetrade/static/media/maincourse.384f4ca8853c21fa8f06b92641177d23.svg",
-    "static/media/films.svg": "/deptspacetrade/static/media/films.299cb47f08735e0923bc0609ca590fa0.svg",
-    "static/media/start.svg": "/deptspacetrade/static/media/start.8ba9e0699a473a5b00f367c968835936.svg",
-    "static/media/deptai.svg": "/deptspacetrade/static/media/deptai.6dd7e925d107b2ab70da6a21c54fc7e1.svg",
-    "static/media/dclosed.svg": "/deptspacetrade/static/media/dclosed.774e78fc0b5b00b93481d3ce05766ad2.svg",
-    "static/media/lesson3.png": "/deptspacetrade/static/media/lesson3.9aff8cc279d9eaa4b924.png",
-    "static/media/lesson7.png": "/deptspacetrade/static/media/lesson7.20eac34d868115a9d2a6.png",
-    "static/media/lesson4.png": "/deptspacetrade/static/media/lesson4.52542fb4ee75b3bc61d9.png",
-    "static/media/lesson9.png": "/deptspacetrade/static/media/lesson9.1697d76632c22225ac13.png",
-    "static/media/lesson1.png": "/deptspacetrade/static/media/lesson1.af59193e90762289f0e2.png",
-    "static/media/lesson2.png": "/deptspacetrade/static/media/lesson2.48a760a8f69c5caecc60.png",
-    "static/media/lesson6.png": "/deptspacetrade/static/media/lesson6.bda377137d3f903131a3.png",
-    "static/media/lesson8.png": "/deptspacetrade/static/media/lesson8.0d395cbf7ec21964d754.png",
+    "main.css": "/deptspacetrade/static/css/main.31d0e5d1.css",
+    "main.js": "/deptspacetrade/static/js/main.a2547921.js",
     "static/media/SF-Pro-Display-Semibold.woff": "/deptspacetrade/static/media/SF-Pro-Display-Semibold.740ddd1d360ba1763cfc.woff",
     "static/media/SF-Pro-Display-Medium.woff": "/deptspacetrade/static/media/SF-Pro-Display-Medium.4142141ee1028c25aa77.woff",
-    "static/media/lesson5.png": "/deptspacetrade/static/media/lesson5.d34208cdde107ec89bc0.png",
     "static/media/SF-Pro-Display-Bold.woff": "/deptspacetrade/static/media/SF-Pro-Display-Bold.c3b69f8f2f19ee996e54.woff",
     "static/media/SF-Pro-Display-Regular.woff": "/deptspacetrade/static/media/SF-Pro-Display-Regular.bbd424a0cef710aeec1d.woff",
     "static/media/SF-Pro-Display-Semibold.woff2": "/deptspacetrade/static/media/SF-Pro-Display-Semibold.00d526c059bb8595900d.woff2",
     "static/media/SF-Pro-Display-Medium.woff2": "/deptspacetrade/static/media/SF-Pro-Display-Medium.91f34536fe9e682ea313.woff2",
     "static/media/SF-Pro-Display-Bold.woff2": "/deptspacetrade/static/media/SF-Pro-Display-Bold.3bdf7419b00bc98ee585.woff2",
     "static/media/SF-Pro-Display-Regular.woff2": "/deptspacetrade/static/media/SF-Pro-Display-Regular.f2e751755e6d71d2d5ee.woff2",
-    "static/media/backtests.svg": "/deptspacetrade/static/media/backtests.5f2b86731bbb8afc258dffed0e0eb4ab.svg",
-    "static/media/translations.svg": "/deptspacetrade/static/media/translations.5f2aeaaf9f3819756205f8002afd4856.svg",
     "static/media/logoback.svg": "/deptspacetrade/static/media/logoback.5ed554b0f79a66630865af0db97dc084.svg",
     "static/media/logo.svg": "/deptspacetrade/static/media/logo.1bd61cbb77737e8459aa288e030a4ebb.svg",
     "static/media/chats.svg": "/deptspacetrade/static/media/chats.bbda82c35299d339426e7553d41428a1.svg",
@@ -44,11 +26,11 @@
     "static/media/block.svg": "/deptspacetrade/static/media/block.9753d013b8f9bc91967bea45008ece76.svg",
     "static/media/star-fill.svg": "/deptspacetrade/static/media/star-fill.b7ec3bfabc3a5d703fb77ec9eed5182b.svg",
     "index.html": "/deptspacetrade/index.html",
-    "main.7e8ea33b.css.map": "/deptspacetrade/static/css/main.7e8ea33b.css.map",
-    "main.60838515.js.map": "/deptspacetrade/static/js/main.60838515.js.map"
+    "main.31d0e5d1.css.map": "/deptspacetrade/static/css/main.31d0e5d1.css.map",
+    "main.a2547921.js.map": "/deptspacetrade/static/js/main.a2547921.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e8ea33b.css",
-    "static/js/main.60838515.js"
+    "static/css/main.31d0e5d1.css",
+    "static/js/main.a2547921.js"
   ]
 }
