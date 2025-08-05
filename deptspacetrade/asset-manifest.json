@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/deptspacetrade/static/css/main.142d255c.css",
+    "main.css": "/deptspacetrade/static/css/main.5a5a6469.css",
     "main.js": "/deptspacetrade/static/js/main.6707a4cd.js",
     "static/media/SF-Pro-Display-Semibold.woff": "/deptspacetrade/static/media/SF-Pro-Display-Semibold.740ddd1d360ba1763cfc.woff",
     "static/media/SF-Pro-Display-Medium.woff": "/deptspacetrade/static/media/SF-Pro-Display-Medium.4142141ee1028c25aa77.woff",
@@ -26,11 +26,11 @@
     "static/media/block.svg": "/deptspacetrade/static/media/block.9753d013b8f9bc91967bea45008ece76.svg",
     "static/media/star-fill.svg": "/deptspacetrade/static/media/star-fill.b7ec3bfabc3a5d703fb77ec9eed5182b.svg",
     "index.html": "/deptspacetrade/index.html",
-    "main.142d255c.css.map": "/deptspacetrade/static/css/main.142d255c.css.map",
+    "main.5a5a6469.css.map": "/deptspacetrade/static/css/main.5a5a6469.css.map",
     "main.6707a4cd.js.map": "/deptspacetrade/static/js/main.6707a4cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.142d255c.css",
+    "static/css/main.5a5a6469.css",
     "static/js/main.6707a4cd.js"
   ]
 }
