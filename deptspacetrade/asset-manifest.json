@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/deptspacetrade/static/css/main.f83d18b4.css",
-    "main.js": "/deptspacetrade/static/js/main.3037af26.js",
+    "main.css": "/deptspacetrade/static/css/main.705f883c.css",
+    "main.js": "/deptspacetrade/static/js/main.df34a332.js",
     "static/media/SF-Pro-Display-Semibold.woff": "/deptspacetrade/static/media/SF-Pro-Display-Semibold.740ddd1d360ba1763cfc.woff",
     "static/media/SF-Pro-Display-Medium.woff": "/deptspacetrade/static/media/SF-Pro-Display-Medium.4142141ee1028c25aa77.woff",
     "static/media/SF-Pro-Display-Bold.woff": "/deptspacetrade/static/media/SF-Pro-Display-Bold.c3b69f8f2f19ee996e54.woff",
@@ -26,11 +26,11 @@
     "static/media/rules.svg": "/deptspacetrade/static/media/rules.4c439cbc7b9cfb5835106273e0e1bf5b.svg",
     "static/media/block.svg": "/deptspacetrade/static/media/block.9753d013b8f9bc91967bea45008ece76.svg",
     "static/media/star-fill.svg": "/deptspacetrade/static/media/star-fill.b7ec3bfabc3a5d703fb77ec9eed5182b.svg",
-    "main.f83d18b4.css.map": "/deptspacetrade/static/css/main.f83d18b4.css.map",
-    "main.3037af26.js.map": "/deptspacetrade/static/js/main.3037af26.js.map"
+    "main.705f883c.css.map": "/deptspacetrade/static/css/main.705f883c.css.map",
+    "main.df34a332.js.map": "/deptspacetrade/static/js/main.df34a332.js.map"
   },
   "entrypoints": [
-    "static/css/main.f83d18b4.css",
-    "static/js/main.3037af26.js"
+    "static/css/main.705f883c.css",
+    "static/js/main.df34a332.js"
   ]
 }
