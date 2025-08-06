@@ -480,7 +480,7 @@
           "sort_order": 2,
           "created_at": "2024-01-15T10:00:00",
           "is_favorite": false,
-          "text_color": "#171717",
+          "text_color": "#FFFFFF",
           "button_color": "",
           "button_text_color": ""
         }
