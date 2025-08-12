@@ -1,0 +1,551 @@
+{
+  "sections": [
+    {
+      "id": 1,
+      "title": "Старт в торговле",
+      "description": "Базовые материалы для начала торговли",
+      "image": "/assets/images/sections/start.png",
+      "sort_order": 1,
+      "created_at": "2024-01-15T10:00:00",
+      "text_color": "#FFFFFF",
+      "materials": [
+        {
+          "id": 1,
+          "title": "Что такое криптовалюта и чем она лучше других активов?",
+          "description": "Базовый курс для начинающих трейдеров. Изучите основы криптовалют и их преимущества.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson1.png",
+          "external_link": "https://rutube.ru/video/cce5cd139a6cba94c06ff38dd00d4e23",
+          "sort_order": 1,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 2,
+          "title": "Как выбрать биржу и пополнить счёт?",
+          "description": "Практическое руководство по выбору криптобиржи и пополнению счета.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson2.png",
+          "external_link": "https://rutube.ru/video/3620513b2c2ca332018cdb61d421efce",
+          "sort_order": 2,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 3,
+          "title": "TradingView: как пользоваться и зачем он нужен?",
+          "description": "Обучение работе с платформой TradingView для технического анализа.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson3.png",
+          "external_link": "https://rutube.ru/video/8c47de13d727a9a46c3e47acbfcd1325",
+          "sort_order": 3,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 4,
+          "title": "Виды стратегий и как её выбрать",
+          "description": "Обзор различных торговых стратегий и принципы их выбора.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson4.png",
+          "external_link": "https://rutube.ru/video/04aacf9cd57081978721bb222e1d3ed1",
+          "sort_order": 4,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 5,
+          "title": "WinRate и RR: просто о важном",
+          "description": "Ключевые метрики трейдинга: WinRate и соотношение риск/прибыль.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson5.png",
+          "external_link": "https://rutube.ru/video/0e8287ba60bc585a090fd8c769936454",
+          "sort_order": 5,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 6,
+          "title": "Риск-менеджмент: как не потерять деньги?",
+          "description": "Основы управления рисками и сохранения капитала в торговле.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson6.png",
+          "external_link": "https://rutube.ru/video/8ec9a6e1365ec4bad7490d92de8fe3f6",
+          "sort_order": 6,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 7,
+          "title": "Как работает рынок? Ордера и ликвидность",
+          "description": "Понимание рыночной механики, типов ордеров и ликвидности.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson7.png",
+          "external_link": "https://rutube.ru/video/1e8d737544b1285ddc5aad53112f0161",
+          "sort_order": 7,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 8,
+          "title": "Трейдинг — это свобода. Почему?",
+          "description": "Философия трейдинга и его влияние на личностное развитие.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson8.png",
+          "external_link": "https://rutube.ru/video/a128566ba9b9a4a8234c5105df738b21",
+          "sort_order": 8,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 9,
+          "title": "D-Product — лучшее в инфополе трейдинга",
+          "description": "Обзор экосистемы D-Product и её возможностей для трейдеров.",
+          "section_id": 1,
+          "image": "/assets/images/start/lesson9.png",
+          "external_link": "https://rutube.ru/video/626342577faa6a1f65a0bc1add5bb8a0",
+          "sort_order": 9,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Полезные материалы",
+      "description": "Учебные пособия и справочные материалы",
+      "image": "/assets/images/sections/materials.png",
+      "sort_order": 2,
+      "created_at": "2024-01-15T10:00:00",
+      "text_color": "#FFFFFF",
+      "materials": [
+        {
+          "id": 4,
+          "title": "Учебное пособие по трейдингу с ChatGPT от dept.",
+          "description": "Методическое пособие",
+          "section_id": 2,
+          "image": "/assets/images/materials/study-guide.png",
+          "external_link": "https://disk.yandex.ru/d/NG1uAD75blLIMg",
+          "sort_order": 1,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "#FFFFFF",
+          "button_color": "#2E9D69",
+          "button_text_color": ""
+        },
+        {
+          "id": 5,
+          "title": "Как торговать криптовалютными парами с dept.",
+          "description": "Методическое пособие",
+          "section_id": 2,
+          "image": "/assets/images/materials/crypto-trading-dept.png",
+          "external_link": "https://disk.yandex.ru/d/bMMNNfYyLi917A",
+          "sort_order": 2,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 6,
+          "title": "Как определять точки входа в сделку?",
+          "description": "Методическое пособие",
+          "section_id": 2,
+          "image": "/assets/images/materials/entry-points.png",
+          "external_link": "https://t.me/c/2214318910/1718",
+          "sort_order": 3,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 7,
+          "title": "Стратегии в новом рынке #даймнеминуту",
+          "description": "Шпаргалка",
+          "section_id": 2,
+          "image": "/assets/images/materials/give-me-minute.png",
+          "external_link": "https://t.me/c/2214318910/1866",
+          "sort_order": 4,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "#E6E5E3",
+          "button_text_color": "#151515"
+        },
+        {
+          "id": 8,
+          "title": "Шпаргалка по торговле с ChatGPT от dept.",
+          "description": "Шпаргалка",
+          "section_id": 2,
+          "image": "/assets/images/materials/cheat-sheet.png",
+          "external_link": "https://t.me/c/2214318910/1862",
+          "sort_order": 5,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "#2E9D69",
+          "button_text_color": ""
+        },
+        {
+          "id": 9,
+          "title": "Как рассчитать размер позиции с фиксированным плечом?",
+          "description": "Обучающий пост",
+          "section_id": 2,
+          "image": "/assets/images/materials/position-size.png",
+          "external_link": "https://t.me/c/2214318910/2072",
+          "sort_order": 6,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "#E89405",
+          "button_text_color": ""
+        },
+        {
+          "id": 10,
+          "title": "Как работать со стоп-лоссом",
+          "description": "Шпаргалка",
+          "section_id": 2,
+          "image": "/assets/images/materials/stop-loss.png",
+          "external_link": "https://t.me/c/2214318910/2054",
+          "sort_order": 7,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "#EE534E",
+          "button_text_color": ""
+        },
+        {
+          "id": 11,
+          "title": "Принципы нашей торговой системы",
+          "description": "Шпаргалка",
+          "section_id": 2,
+          "image": "/assets/images/materials/system-cheat-sheet.png",
+          "external_link": "https://t.me/c/2214318910/1976",
+          "sort_order": 8,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 12,
+          "title": "Что такое #soft?",
+          "description": "Обучающий пост",
+          "section_id": 2,
+          "image": "/assets/images/materials/what-is-soft.png",
+          "external_link": "https://t.me/c/2214318910/1918",
+          "sort_order": 9,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 13,
+          "title": "Анти чек-лист трейдера",
+          "description": "Чек-лист",
+          "section_id": 2,
+          "image": "/assets/images/materials/anti-checklist.png",
+          "external_link": "https://t.me/c/2214318910/1842",
+          "sort_order": 10,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 14,
+          "title": "Основы риск-менджмента с dept.",
+          "description": "Обучающий пост",
+          "section_id": 2,
+          "image": "/assets/images/materials/risk-management-part1.png",
+          "external_link": "https://t.me/c/2214318910/1796",
+          "sort_order": 11,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 15,
+          "title": "Основы риск-менджмента с dept. (часть 2)",
+          "description": "Обучающий пост",
+          "section_id": 2,
+          "image": "/assets/images/materials/risk-management-part2.png",
+          "external_link": "https://t.me/c/2214318910/1823",
+          "sort_order": 12,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 16,
+          "title": "Индекс доминации BTC",
+          "description": "Обучающий пост",
+          "section_id": 2,
+          "image": "/assets/images/materials/btc-dominance-index.png",
+          "external_link": "https://t.me/c/2214318910/1771",
+          "sort_order": 13,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Разборы, бэктесты",
+      "description": "Анализ сделок и тестирование стратегий",
+      "image": "/assets/images/sections/backtests.png",
+      "sort_order": 3,
+      "created_at": "2024-01-15T10:00:00",
+      "text_color": "#171717",
+      "materials": [
+        {
+          "id": 17,
+          "title": "#forecast 04.08.25",
+          "description": "Прогноз рынка на 4 августа 2025",
+          "section_id": 3,
+          "image": "/assets/images/backtest/graph.png",
+          "external_link": "https://t.me/c/2214318910/2146",
+          "sort_order": 1,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 18,
+          "title": "#forecast 28.07.25",
+          "description": "Прогноз рынка на 28 июля 2025",
+          "section_id": 3,
+          "image": "/assets/images/backtest/graph.png",
+          "external_link": "https://t.me/c/2214318910/2092",
+          "sort_order": 2,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 19,
+          "title": "#forecast 21.07.25",
+          "description": "Прогноз рынка на 21 июля 2025",
+          "section_id": 3,
+          "image": "/assets/images/backtest/graph.png",
+          "external_link": "https://t.me/c/2214318910/2071",
+          "sort_order": 3,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 20,
+          "title": "#forecast 14.07.25",
+          "description": "Прогноз рынка на 14 июля 2025",
+          "section_id": 3,
+          "image": "/assets/images/backtest/graph.png",
+          "external_link": "https://t.me/c/2214318910/2027",
+          "sort_order": 4,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 21,
+          "title": "#forecast 07.07.25",
+          "description": "Прогноз рынка на 7 июля 2025",
+          "section_id": 3,
+          "image": "/assets/images/backtest/graph.png",
+          "external_link": "https://t.me/c/2214318910/2027",
+          "sort_order": 5,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 22,
+          "title": "#forecast 30.06.25",
+          "description": "Прогноз рынка на 30 июня 2025",
+          "section_id": 3,
+          "image": "/assets/images/backtest/graph.png",
+          "external_link": "https://t.me/c/2214318910/1929",
+          "sort_order": 6,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "",
+          "button_color": "",
+          "button_text_color": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Прямые трансляции",
+      "description": "Живые торговые сессии и обзоры",
+      "image": "/assets/images/sections/translations.png",
+      "sort_order": 4,
+      "created_at": "2024-01-15T10:00:00",
+      "materials": [
+        
+      ],
+      "text_color": "#FFFFFF"
+    },
+    {
+      "id": 5,
+      "title": "Фильмы и книги",
+      "description": "Рекомендуемая литература и видеоматериалы",
+      "image": "/assets/images/sections/films.png",
+      "sort_order": 5,
+      "created_at": "2024-01-15T10:00:00",
+      "materials": [],
+      "text_color": "#171717"
+    },
+    {
+      "id": 6,
+      "title": "Основные чаты",
+      "shortname": "chats",
+      "description": "Общение с трейдерами и обмен опытом",
+      "image": "",
+      "sort_order": 6,
+      "created_at": "2024-01-15T10:00:00",
+      "materials": [
+        {
+          "id": 29,
+          "title": "dept.AI",
+          "description": "Основной телеграм канал",
+          "section_id": 6,
+          "image": "/assets/images/sections/deptai.png",
+          "external_link": "https://t.me/+owiHDKA9750zOTBi",
+          "sort_order": 1,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "#FFFFFF",
+          "button_color": "",
+          "button_text_color": ""
+        },
+        {
+          "id": 30,
+          "title": "D-Space",
+          "description": "Основной чат",
+          "section_id": 6,
+          "image": "/assets/images/sections/dspace.png",
+          "external_link": "https://t.me/+bqXtxJN7v4dhYjg6",
+          "sort_order": 2,
+          "created_at": "2024-01-15T10:00:00",
+          "is_favorite": false,
+          "text_color": "#FFFFFF",
+          "button_color": "",
+          "button_text_color": ""
+        }
+      ],
+      "text_color": ""
+    }
+  ],
+  "favorites": [],
+  "configs": {
+    "show_section_banner": "true",
+    "fav_on": "false",
+    "about_text": "<p>Мы - команда профессионалов, специализирующихся на обучении торговле и инвестициям.</p><p>Наша миссия - помочь каждому достичь финансовой независимости через качественное образование и практические навыки.</p>",
+    "support_link": "https://t.me/zabunovV",
+    "rules_html": "<div style=\"text-align: left; font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\"><div style=\"margin: 0;\"><div style=\"margin-bottom: 20px;\"><div style=\"font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 10px; line-height: 1.2;\">1. Тематика и допустимый контент</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">– В сообществе обсуждаются исключительно вопросы, связанные с трейдингом, аналитикой и обучением.</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">– Публикация постороннего контента, рекламы, спама и реферальных ссылок запрещена.</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4;\">– Все сообщения должны быть по теме и нести практическую ценность.</div></div><div style=\"margin-bottom: 20px;\"><div style=\"font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 10px; line-height: 1.2;\">2. Коммуникация и поведение</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">– Общение в сообществе должно быть вежливым и уважительным. Недопустимы: токсичность, агрессия, хамство, провокации, переходы на личности.</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">– Критика допустима только в конструктивной и профессиональной форме.</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4;\">– Флуд, чрезмерное количество бессмысленных сообщений и оффтоп — запрещены.</div></div><div style=\"margin-bottom: 20px;\"><div style=\"font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 10px; line-height: 1.2;\">3. Спам и личные сообщения</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">– Категорически запрещены любые виды спама, массовых рассылок, навязчивых предложений услуг или рекламы в личных сообщениях участникам.</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">– Запрещено использовать сообщество в личных или коммерческих целях без согласования с администрацией.</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4;\">– В случае жалоб на такие действия — нарушитель будет заблокирован без предупреждения.</div></div><div style=\"margin-bottom: 20px;\"><div style=\"font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 10px; line-height: 1.2;\">4. Конфиденциальность</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">– Вся информация и материалы, размещённые в рамках сообщества, являются внутренними и предназначены исключительно для личного использования.</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4;\">– Запрещено распространять, копировать, пересылать или публиковать методические материалы, аналитику, торговые идеи или любой другой закрытый контент.</div></div><div style=\"margin-bottom: 20px;\"><div style=\"font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 10px; line-height: 1.2;\">5. Взаимодействие с администрацией</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">– В случае технических проблем, конфликтных ситуаций или предложений по улучшению — обращайтесь в службу поддержки <a href=\"https://t.me/zabunovV\" target=\"_blank\" style=\"color: #FFFFFF; text-decoration: underline;\">@zabunovV</a></div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4;\">– Обратная связь участников приветствуется и помогает развивать проект.</div></div><div style=\"margin-bottom: 20px;\"><div style=\"font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 10px; line-height: 1.2;\">6. Ответственность</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px;\">Нарушение настоящих правил может повлечь за собой:</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px; margin-left: 20px;\">– предупреждение;</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-bottom: 5px; margin-left: 20px;\">– временное ограничение доступа к чату;</div><div style=\"font-size: 18px; color: #FFFFFF; line-height: 1.4; margin-left: 20px;\">– удаление из сообщества без возврата доступа и компенсаций.</div></div></div><div style=\"margin-top: 20px; font-size: 18px; color: #FFFFFF; line-height: 1.4;\"><strong><a href=\"https://t.me/zabunovV\" target=\"_blank\" style=\"color: #FFFFFF; text-decoration: underline;\">@zabunovV</a></strong> - Контакт поддержки, куда всегда можно обратиться.</div><div style=\"margin-top: 10px; font-size: 18px; color: #FFFFFF; line-height: 1.4;\">Соблюдение этих правил поможет поддержать комфортную атмосферу в нашем сообществе!</div><div style=\"margin-top: 10px; font-size: 18px; color: #FFFFFF; line-height: 1.4; font-style: italic;\">С уважением, Ростян Дептик. Всех обнял!</div></div>"
+  },
+  "faq": [
+    {
+      "id": 1,
+      "question": "Что такое Dept.Space?",
+      "answer": "Dept.Space — это закрытая обучающая экосистема для трейдеров. Мы объединяем полезные материалы, аналитику и сообщество в одном пространстве для роста."
+    },
+    {
+      "id": 2,
+      "question": "Кому подойдёт это сообщество?",
+      "answer": "Сообщество ориентировано на:<ul><li>начинающих трейдеров, которым нужна поддержка и структура;</li><li>опытных участников рынка, заинтересованных в софте и обмене опытом;</li><li>тех, кто хочет перейти от хаоса в торговле к системному подходу.</li></ul>"
+    },
+    {
+      "id": 3,
+      "question": "Зачем нужны правила?",
+      "answer": "Правила помогают сохранить полезную, уважительную и безопасную среду, в которой каждый участник чувствует себя комфортно и получает максимум ценности."
+    },
+    {
+      "id": 4,
+      "question": "Что я получаю как участник?",
+      "answer": "<ul><li>Доступ к профессиональному сообществу;</li><li>Учебные материалы и методические гайды;</li><li>Аналитику и обсуждение текущей ситуации на рынке;</li><li>Возможность задать вопросы и получить обратную связь;</li></ul>"
+    },
+    {
+      "id": 5,
+      "question": "Могу ли я просто читать, не участвуя в обсуждениях?",
+      "answer": "Да, вы можете быть пассивным участником. Однако мы поощряем активность — задавайте вопросы, делитесь идеями, участвуйте в разборе сделок. Это ускоряет рост."
+    },
+    {
+      "id": 6,
+      "question": "Что делать, если я вижу некорректное поведение?",
+      "answer": "Сообщите об этом модератору или в поддержку. Мы быстро реагируем на любые формы неуважительного или подозрительного поведения."
+    },
+    {
+      "id": 7,
+      "question": "Почему запрещён спам и реклама?",
+      "answer": "Чтобы сообщество оставалось сосредоточенным на ценности и развитии, мы исключаем любые формы навязчивых предложений, рекламы и стороннего контента."
+    },
+    {
+      "id": 8,
+      "question": "Могу ли я пригласить друга?",
+      "answer": "Да, по согласованию с поддержкой. Мы заинтересованы в расширении качественного круга участников."
+    },
+    {
+      "id": 9,
+      "question": "Что если я не успеваю следить за всеми материалами?",
+      "answer": "Материалы доступны в удобной структуре — вы можете возвращаться к ним в любое время. Главное — двигаться в своём темпе."
+    },
+    {
+      "id": 10,
+      "question": "Как лучше всего использовать возможности сообщества?",
+      "answer": "<ul><li>Регулярно читайте обсуждения</li><li>Используйте методички и гайды</li><li>Анализируйте свои сделки</li><li>Задавайте вопросы</li><li>Делитесь опытом</li></ul>"
+    }
+  ]
+}
